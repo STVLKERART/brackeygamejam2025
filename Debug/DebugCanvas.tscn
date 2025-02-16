@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Debug/DebugCanvas.gd" id="1_8rkqg"]
 [ext_resource type="Script" path="res://Debug/DebugDisplay.cs" id="2_wu7uk"]
-[ext_resource type="Script" path="res://DebugDefaults.cs" id="3_myhrt"]
+[ext_resource type="Script" path="res://Debug/DebugDefaults.cs" id="3_myhrt"]
 
 [node name="DebugCanvas" type="CanvasLayer"]
 script = ExtResource("1_8rkqg")
