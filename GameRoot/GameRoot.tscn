@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://beepgbryoiiic" path="res://Scenes/ControlRoom.tscn" id="3_7fc4i"]
 [ext_resource type="PackedScene" uid="uid://dfa5j75ium1ff" path="res://Buttons/button.tscn" id="4_sa6hs"]
 [ext_resource type="Script" path="res://GameRoot/MeltdownProgress.cs" id="5_wdboo"]
-[ext_resource type="PackedScene" uid="uid://ct3de2np8y4ql" path="res://countdown_monitor.tscn" id="6_km1ce"]
+[ext_resource type="PackedScene" uid="uid://ct3de2np8y4ql" path="res://CountdownMonitor/CountdownMonitor.tscn" id="6_km1ce"]
 
 [node name="GameRoot" type="Node" node_paths=PackedStringArray("_meltdownProgress")]
 script = ExtResource("1_x4odi")
@@ -33,7 +33,6 @@ transform = Transform3D(1, -0.000720782, 0.000634501, 0.000269704, 0.844978, 0.5
 [node name="MeltdownProgress" type="Node" parent="." node_paths=PackedStringArray("countdownMonitor")]
 script = ExtResource("5_wdboo")
 countdownMonitor = NodePath("../CountdownMonitor")
-InitalCountdown = 20.0
 _buttonTagList = Array[String](["purple_test"])
 
 [node name="CountdownMonitor" parent="." instance=ExtResource("6_km1ce")]

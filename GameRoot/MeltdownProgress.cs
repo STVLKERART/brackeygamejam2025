@@ -30,13 +30,13 @@ public partial class MeltdownProgress : Node
         if (_buttonTagList.Last() == name)
             _buttonTagList.Remove(name);
 
-        if (_buttonTagList.Last() == null)
+        if (_buttonTagList.Count == 0)
             GD.Print("Game Over!!");
 
         if (name == "confetti_button")
         {
             // confetti logic
-        }
+        } 
     }
 }
 
