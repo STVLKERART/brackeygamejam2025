@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bqrem1yq8jafm" path="res://Player/Player.tscn" id="1_tp3tb"]
 [ext_resource type="Script" path="res://GameRoot/GameRoot.cs" id="1_x4odi"]
-[ext_resource type="PackedScene" uid="uid://cvbo1rxa8e1od" path="res://Scenes/test.tscn" id="2_kj85g"]
+[ext_resource type="PackedScene" uid="uid://beepgbryoiiic" path="res://Scenes/ControlRoom.tscn" id="3_7fc4i"]
 [ext_resource type="PackedScene" uid="uid://dfa5j75ium1ff" path="res://Buttons/button.tscn" id="4_sa6hs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cc42n"]
@@ -35,8 +35,7 @@ _speed = 3.0
 [node name="Camera" parent="PlayerCharacter/Neck" index="0"]
 current = true
 
-[node name="Test" parent="." instance=ExtResource("2_kj85g")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+[node name="ControlRoom" parent="." instance=ExtResource("3_7fc4i")]
 
 [node name="Button" parent="." instance=ExtResource("4_sa6hs")]
 transform = Transform3D(1, 0, 0, 0, 0.914685, 0.404168, 0, -0.404168, 0.914685, 1.74713, 1.1294, 4.69621)

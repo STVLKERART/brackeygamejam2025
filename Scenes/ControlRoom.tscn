@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://beepgbryoiiic"]
+
+[ext_resource type="PackedScene" uid="uid://whvm8hib6roj" path="res://Assets/Control_Room_Blockout_1.fbx" id="1_7um7u"]
+
+[node name="ControlRoom" type="Node3D"]
+
+[node name="Control_Room_Blockout_1" parent="." instance=ExtResource("1_7um7u")]
+
+[node name="Human_Scale_Standing" parent="Control_Room_Blockout_1/Floor_Scale" index="6"]
+visible = false
+
+[node name="Human_Scale_Sitting" parent="Control_Room_Blockout_1/Floor_Scale" index="7"]
+visible = false
+
+[editable path="Control_Room_Blockout_1"]
