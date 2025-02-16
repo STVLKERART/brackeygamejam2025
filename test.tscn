@@ -48,12 +48,6 @@ transform = Transform3D(1, -1.46611e-09, 0, 0, 1, -2.76668e-12, 0, -5.58531e-12,
 operation = 2
 size = Vector3(1.23196, 0.0571289, 0.0578918)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, -2.26267e-08, 0.965926, 0.258819, 8.44439e-08, 0.258819, -0.965926, 0, 1.701, -1.32045)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.816066, -0.479283, -0.322991, 0.506582, 0.324137, 0.798943, -0.278226, -0.815612, 0.507314, 0, 0, 0)
-
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6901, 0.511955, 1.67898)
 size = Vector3(0.615295, 1, 0.629028)

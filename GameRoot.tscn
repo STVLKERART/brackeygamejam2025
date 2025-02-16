@@ -1,7 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://gqkdkyfar0nj"]
+[gd_scene load_steps=7 format=3 uid="uid://gqkdkyfar0nj"]
 
 [ext_resource type="PackedScene" uid="uid://bqrem1yq8jafm" path="res://Player.tscn" id="1_tp3tb"]
+[ext_resource type="Script" path="res://GameRoot.cs" id="1_x4odi"]
+[ext_resource type="PackedScene" uid="uid://cvbo1rxa8e1od" path="res://test.tscn" id="2_kj85g"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cc42n"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_iy4vd"]
+sky_material = SubResource("ProceduralSkyMaterial_cc42n")
+
+[sub_resource type="Environment" id="Environment_s66bl"]
+background_mode = 2
+sky = SubResource("Sky_iy4vd")
+tonemap_mode = 2
+glow_enabled = true
 
 [node name="GameRoot" type="Node"]
+script = ExtResource("1_x4odi")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_s66bl")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_tp3tb")]
+transform = Transform3D(-0.949743, 0, -0.313031, 0, 1, 0, 0.313031, 0, -0.949743, 0, 0, 0)
+
+[node name="Camera" parent="PlayerCharacter/Neck" index="0"]
+current = true
+
+[node name="Test" parent="." instance=ExtResource("2_kj85g")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[editable path="PlayerCharacter"]
