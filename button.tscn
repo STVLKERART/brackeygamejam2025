@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfa5j75ium1ff"]
+
+[ext_resource type="Script" path="res://Button.cs" id="1_bql27"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_no4ln"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b75al"]
+albedo_color = Color(1, 0.164706, 1, 1)
+
+[node name="Button" type="Node3D"]
+script = ExtResource("1_bql27")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.143996, 0)
+shape = SubResource("BoxShape3D_no4ln")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(2.97077, 0, 0, 0, 2.97077, 0, 0, 0, 2.97077, 0, 0.123443, 0)
+size = Vector3(0.1, 0.1, 0.1)
+material = SubResource("StandardMaterial3D_b75al")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(8.8253, -0.0375992, -0.0389443, 0.0338301, -1.12588, 8.75329, -0.0422597, -8.75327, -1.12571, 0, 0, 0)
+size = Vector3(0.1, 0.1, 0.01)
