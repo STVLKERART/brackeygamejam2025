@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqrem1yq8jafm"]
+
+[ext_resource type="Script" path="res://PlayerCharacter.cs" id="1_ue1es"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y61i3"]
+
+[node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("_firstPersonCamera", "_head")]
+script = ExtResource("1_ue1es")
+_firstPersonCamera = NodePath("Neck/Camera")
+_head = NodePath("Neck")
+
+[node name="Neck" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.2)
+
+[node name="Camera" type="Camera3D" parent="Neck"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_y61i3")
