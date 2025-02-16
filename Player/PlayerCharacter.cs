@@ -15,7 +15,7 @@ public partial class PlayerCharacter : CharacterBody3D
 		// self explanitory i think
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 
-		// seems to be starndard paractice to create a copy of the velocity variable idk if unity is the same
+		// standard paractice to create a copy of the velocity variable 
 		Vector3 velocity = Velocity;
 
 
