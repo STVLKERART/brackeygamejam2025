@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cwsnhapo1dsth"]
+
+[ext_resource type="Shader" uid="uid://c1bu2i7wnftpy" path="res://Assets/MaterialShaders/MS_Paper.tres" id="1_0okb0"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_0okb0")

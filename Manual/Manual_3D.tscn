@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://do7nfuuustx41"]
 
-[ext_resource type="ArrayMesh" uid="uid://bqt0a45whtilx" path="res://Assets/boek_01.obj" id="1_bm467"]
+[ext_resource type="ArrayMesh" uid="uid://bqt0a45whtilx" path="res://Assets/Objects-Meshes/boek_01.obj" id="1_bm467"]
 [ext_resource type="PackedScene" uid="uid://7jk47djl2n35" path="res://Manual/Page_01.tscn" id="2_j3tmn"]
 [ext_resource type="PackedScene" uid="uid://booflvxn4imp7" path="res://Manual/Page_02.tscn" id="3_vqnfi"]
 

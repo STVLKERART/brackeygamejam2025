@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c4o7ajtt148pd"]
+
+[ext_resource type="Shader" uid="uid://des43ceos6uw2" path="res://Assets/MaterialShaders/MS_wat.tres" id="1_efruv"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_efruv")
