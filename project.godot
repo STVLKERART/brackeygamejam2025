@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="BrackeyGameJam2025"
-run/main_scene="res://GameRoot.tscn"
+run/main_scene="res://GameRoot/GameRoot.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Assets/Godot/icon.svg"
 
 [dotnet]
 

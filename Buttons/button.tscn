@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dfa5j75ium1ff"]
 
-[ext_resource type="Script" path="res://Button.cs" id="1_bql27"]
+[ext_resource type="Script" path="res://Buttons/Button.cs" id="1_bql27"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_no4ln"]
 size = Vector3(0.5, 0.5, 0.5)

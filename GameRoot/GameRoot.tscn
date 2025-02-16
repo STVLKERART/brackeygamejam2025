@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://gqkdkyfar0nj"]
 
-[ext_resource type="PackedScene" uid="uid://bqrem1yq8jafm" path="res://Player.tscn" id="1_tp3tb"]
-[ext_resource type="Script" path="res://GameRoot.cs" id="1_x4odi"]
-[ext_resource type="PackedScene" uid="uid://cvbo1rxa8e1od" path="res://test.tscn" id="2_kj85g"]
-[ext_resource type="PackedScene" uid="uid://dfa5j75ium1ff" path="res://button.tscn" id="4_sa6hs"]
+[ext_resource type="PackedScene" uid="uid://bqrem1yq8jafm" path="res://Player/Player.tscn" id="1_tp3tb"]
+[ext_resource type="Script" path="res://GameRoot/GameRoot.cs" id="1_x4odi"]
+[ext_resource type="PackedScene" uid="uid://cvbo1rxa8e1od" path="res://Scenes/test.tscn" id="2_kj85g"]
+[ext_resource type="PackedScene" uid="uid://dfa5j75ium1ff" path="res://Buttons/button.tscn" id="4_sa6hs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cc42n"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
