@@ -1,5 +1,6 @@
 using Godot;
 using Godot.Collections;
+using RadPipe.Debug;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,8 @@ public partial class MeltdownProgress : Node
     public void AddFacilityButton(FacilityButton button)
     {
         buttonList.Add(button);
+        if (button.ButtonTag != null) 
+            RadDebug.SetItem(button.ButtonTag, "");
         button.Pressed += ActivateButtonLogic;
 
     }
@@ -28,8 +31,10 @@ public partial class MeltdownProgress : Node
     {
 
         if (_buttonTagList.Last() == name)
+        {
+            RadDebug.RemoveItem(name);
             _buttonTagList.Remove(name);
-
+        }
         if (_buttonTagList.Count == 0)
             GD.Print("Game Over!!");
 
