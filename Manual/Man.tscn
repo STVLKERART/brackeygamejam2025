@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://epuri8hjaywa"]
+
+[ext_resource type="ArrayMesh" uid="uid://bqt0a45whtilx" path="res://Assets/boek_01.obj" id="1_udora"]
+[ext_resource type="Material" uid="uid://cwsnhapo1dsth" path="res://Manual/M_Paper.tres" id="2_q5t25"]
+[ext_resource type="Shader" path="res://Manual/MS_Paper_gd.gdshader" id="3_gkj4b"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0gpt1"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_asmb7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ci0c"]
+render_priority = 0
+shader = ExtResource("3_gkj4b")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_udora")
+
+[node name="Mesh_LeftPage" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.943063, 0, 0, 0, -4.37114e-08, -1.43121, 0, 1, -6.25601e-08, -1.021, 0, 0.044)
+mesh = SubResource("PlaneMesh_0gpt1")
+surface_material_override/0 = ExtResource("2_q5t25")
+
+[node name="Mesh_RightPage" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.73131, -0.631393, 3.95001e-08, 0, -4.37114e-08, -1.43121, 0.595444, 0.775463, -4.85131e-08, 0.691, 0, 0.661)
+mesh = SubResource("PlaneMesh_asmb7")
+surface_material_override/0 = SubResource("ShaderMaterial_1ci0c")
