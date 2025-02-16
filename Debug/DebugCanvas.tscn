@@ -1,17 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccfora3y5pnfb"]
+[gd_scene load_steps=3 format=3 uid="uid://ccfora3y5pnfb"]
 
-[ext_resource type="Script" path="res://Debug/DebugCanvas.gd" id="1_8rkqg"]
-[ext_resource type="Script" path="res://Debug/DebugDisplay.cs" id="2_wu7uk"]
 [ext_resource type="Script" path="res://Debug/DebugDefaults.cs" id="3_myhrt"]
 
-[node name="DebugCanvas" type="CanvasLayer"]
-script = ExtResource("1_8rkqg")
+[sub_resource type="GDScript" id="GDScript_k41p6"]
+script/source = "extends CanvasLayer
+"
 
-[node name="DebugDisplay" type="Control" parent="." node_paths=PackedStringArray("BaseBoxContainer")]
+[node name="DebugCanvas" type="CanvasLayer"]
+script = SubResource("GDScript_k41p6")
+
+[node name="DebugDisplay" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("2_wu7uk")
-BaseBoxContainer = NodePath("PanelContainer/MarginContainer/BoxContainer")
 
 [node name="PanelContainer" type="PanelContainer" parent="DebugDisplay"]
 layout_mode = 0
