@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1g1y5jnw6uvp"]
+
+[ext_resource type="PackedScene" uid="uid://cuq5laa84ctv1" path="res://Manual/sub_viewport_container.tscn" id="1_5ums8"]
+
+[node name="Page_01" type="Node2D"]
+
+[node name="SubViewportContainer" parent="." instance=ExtResource("1_5ums8")]
