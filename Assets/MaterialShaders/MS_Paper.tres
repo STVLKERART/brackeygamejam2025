@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dy8mqk55xystb" path="res://Assets/Textures/Paper004/Paper004_2K-JPG_Roughness.jpg" id="3_opvjh"]
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_dm6n2"]
+expanded_output_ports = [0]
 texture = ExtResource("1_w7w8p")
 texture_type = 2
 
@@ -49,6 +50,7 @@ void fragment() {
 
 }
 "
+graph_offset = Vector2(-444.243, -444.014)
 nodes/vertex/0/position = Vector2(-120, 320)
 nodes/fragment/0/position = Vector2(360, 120)
 nodes/fragment/4/node = SubResource("VisualShaderNodeTexture_dm6n2")
