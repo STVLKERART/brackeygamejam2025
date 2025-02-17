@@ -24,4 +24,7 @@ transform = Transform3D(0.722238, -0.643028, 4.01393e-08, -7.62604e-11, -4.37113
 [node name="Pivot" parent="Book" instance=ExtResource("4_is1th")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.73025)
+transform = Transform3D(0.926259, 0, -0.376887, 0, 1, 0, 0.376887, 0, 0.926259, -0.989799, 0.0150981, 2.30006)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.976356, 0, 0.216167, -0.1048, 0.87462, 0.473347, -0.189064, -0.48481, 0.85394, 0, 0, 2.86829)
