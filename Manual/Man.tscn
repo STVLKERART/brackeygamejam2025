@@ -1,40 +1,27 @@
 [gd_scene load_steps=6 format=3 uid="uid://epuri8hjaywa"]
 
+[ext_resource type="Script" path="res://Manual/InstructionManualControl.gd" id="1_4nqev"]
 [ext_resource type="Material" uid="uid://l166gpk8vy11" path="res://Assets/Materials/M_BasicBrown.tres" id="1_m877v"]
 [ext_resource type="ArrayMesh" uid="uid://bqt0a45whtilx" path="res://Assets/Objects-Meshes/boek_01.obj" id="1_udora"]
-[ext_resource type="Material" uid="uid://cwsnhapo1dsth" path="res://Assets/Materials/M_Paper.tres" id="2_q5t25"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_0gpt1"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_asmb7"]
+[ext_resource type="PackedScene" uid="uid://cyks2bybopkvi" path="res://Manual/mesh_page.tscn" id="3_e51nn"]
+[ext_resource type="PackedScene" uid="uid://dy4g6b5mketrm" path="res://Manual/pivot.tscn" id="4_is1th"]
 
 [node name="Node3D" type="Node3D"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.000660181, 0.00466847, -0.000921726)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0137075, 0.00466847, 0.0319883)
+script = ExtResource("1_4nqev")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Book" type="MeshInstance3D" parent="."]
 material_override = ExtResource("1_m877v")
 mesh = ExtResource("1_udora")
 surface_material_override/0 = ExtResource("1_m877v")
 
-[node name="Mesh_LeftPage" type="MeshInstance3D" parent="MeshInstance3D"]
-transform = Transform3D(0.943063, 0, 0, 0, -4.37114e-08, -1.43121, 0, 1, -6.25601e-08, -1.021, 0, 0.044)
-mesh = SubResource("PlaneMesh_0gpt1")
-surface_material_override/0 = ExtResource("2_q5t25")
+[node name="Mesh_PageL" parent="Book" instance=ExtResource("3_e51nn")]
+transform = Transform3D(0.943063, 0, 0, 0, -4.37114e-08, -1.43121, 0, 1, -6.25602e-08, -0.960644, 3.68367e-10, 0.035527)
 
-[node name="Mesh_RightPage" type="MeshInstance3D" parent="MeshInstance3D"]
-transform = Transform3D(0.73131, -0.631393, 3.95001e-08, 0, -4.37114e-08, -1.43121, 0.595444, 0.775463, -4.85131e-08, 0.691, 0, 0.661)
-mesh = SubResource("PlaneMesh_asmb7")
-surface_material_override/0 = ExtResource("2_q5t25")
+[node name="Mesh_PageR" parent="Book" instance=ExtResource("3_e51nn")]
+transform = Transform3D(0.722238, -0.643028, 4.01393e-08, -7.62604e-11, -4.37113e-08, -1.43121, 0.606416, 0.765842, -4.79856e-08, 0.707983, -6.29444e-11, 0.643278)
 
-[node name="Pivot" type="Node3D" parent="MeshInstance3D"]
-transform = Transform3D(0.985684, -0.00274887, 0.168579, 0.00230902, 0.999993, 0.00280511, -0.168586, -0.00237569, 0.985684, 0, 0, 0)
+[node name="Pivot" parent="Book" instance=ExtResource("4_is1th")]
 
-[node name="Mesh_MobileL" type="MeshInstance3D" parent="MeshInstance3D/Pivot"]
-transform = Transform3D(0.73131, -0.631393, 3.95001e-08, 0, -4.37114e-08, -1.43121, 0.595444, 0.775463, -4.85131e-08, 0.691, 0, 0.661)
-mesh = SubResource("PlaneMesh_asmb7")
-surface_material_override/0 = ExtResource("2_q5t25")
-
-[node name="Mesh_MobileR" type="MeshInstance3D" parent="MeshInstance3D/Pivot"]
-transform = Transform3D(-0.73131, 0.631393, -3.95001e-08, -2.11544e-15, -4.37114e-08, -1.43121, -0.595444, -0.775463, 4.85131e-08, 0.691, 0, 0.661)
-mesh = SubResource("PlaneMesh_asmb7")
-surface_material_override/0 = ExtResource("2_q5t25")
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.73025)

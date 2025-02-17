@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy4g6b5mketrm"]
+
+[ext_resource type="PackedScene" uid="uid://cyks2bybopkvi" path="res://Manual/mesh_page.tscn" id="1_02a2t"]
+
+[node name="Pivot" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000375957, 4.8399e-05, 0.0165225)
+
+[node name="Mesh_PageMobileL" parent="." instance=ExtResource("1_02a2t")]
+transform = Transform3D(0.73131, -0.631394, 3.95001e-08, 0, -4.37114e-08, -1.43121, 0.595444, 0.775462, -4.85131e-08, 0.729845, 2.69967e-09, 0.613291)
+
+[node name="Mesh_PageMobileR" parent="." instance=ExtResource("1_02a2t")]
+transform = Transform3D(-0.731533, 0.631102, 0.00144473, -0.000914624, 0.000407454, -1.43121, -0.595169, -0.7757, 0.000423674, 0.729845, 2.69938e-09, 0.613291)
