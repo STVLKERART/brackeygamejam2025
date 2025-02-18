@@ -38,7 +38,7 @@ public partial class Interactor : Node3D
         {
             if (Input.IsActionPressed("interact"))
             {
-                GD.Print("Interacted");
+                //GD.Print("Interacted");
                 if (_ray.IsColliding())
                 {
                     Node parent = (_ray.GetCollider() as Node3D)?.GetParent();
