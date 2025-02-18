@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccfora3y5pnfb"]
+[gd_scene load_steps=5 format=3 uid="uid://ccfora3y5pnfb"]
 
 [ext_resource type="Script" path="res://Debug/DebugDisplay.cs" id="2_wu7uk"]
 [ext_resource type="Script" path="res://Debug/DebugDefaults.cs" id="3_myhrt"]
+[ext_resource type="Texture2D" uid="uid://dfo1o0b0st8v8" path="res://Assets/Textures/crosshair_01.png" id="3_ol7fl"]
 
 [sub_resource type="GDScript" id="GDScript_k41p6"]
 script/source = "extends CanvasLayer
@@ -36,3 +37,20 @@ vertical = true
 
 [node name="DebugDefaults" type="Node" parent="."]
 script = ExtResource("3_myhrt")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/CenterContainer"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture = ExtResource("3_ol7fl")
+expand_mode = 1
+stretch_mode = 5
