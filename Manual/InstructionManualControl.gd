@@ -55,10 +55,13 @@ func start_bkwd_rotation(duration: float):
 	rotating = true
 	set_mobile_page_textures_BKWD() # Update page textures
 	await rotate_over_time(Vector3(0, deg_to_rad(-140), 0),Vector3(0, deg_to_rad(-140 * 0.1), 0), duration * 0.9)
-	current_page -= 2
 	update_page_textures_BKWD()
 	await rotate_over_time(Vector3(0, deg_to_rad(-140 * 0.1), 0), Vector3.ZERO, duration * 0.1)
 	rotating = false
+	if current_page - 2 >= 0:
+		current_page -= 2
+	else:
+		current_page = 0
 	
 
 func rotate_over_time(start_rotation: Vector3, target_rotation: Vector3, duration: float):
@@ -89,17 +92,17 @@ func update_page_textures():
 
 func set_mobile_page_textures_BKWD():
 	if MI_mobilePageText_Front:# and current_page > 0:
-		MI_mobilePageText_Front.set_shader_parameter("tex_frg_2", T_pages[current_page])
+		MI_mobilePageText_Front.set_shader_parameter("tex_frg_2", T_pages[current_page - 2])
 	
 	if MI_mobilePageText_Back:# and current_page - 1 > 0:
 		MI_mobilePageText_Back.set_shader_parameter("tex_frg_2", T_pages[current_page - 1])
 	
 	if MI_leftPage:
-		if current_page - 2 > 0:
-			MI_leftPage.set_shader_parameter("tex_frg_2", T_pages[current_page - 2])
+		if current_page - 3 > 0:
+			MI_leftPage.set_shader_parameter("tex_frg_2", T_pages[current_page - 3])
 		else:
 			MI_leftPage.set_shader_parameter("tex_frg_2", T_page_blank)
 
 func update_page_textures_BKWD():
 	if MI_rightPage:# and current_page - 1 > 0:
-		MI_rightPage.set_shader_parameter("tex_frg_2", T_pages[current_page])
+		MI_rightPage.set_shader_parameter("tex_frg_2", T_pages[current_page - 2])
