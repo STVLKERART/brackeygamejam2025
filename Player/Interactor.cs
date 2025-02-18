@@ -1,9 +1,10 @@
 using Godot;
 using System;
+using static Godot.WebSocketPeer;
 
 public partial class Interactor : Node3D
 {
-    [Export]private Camera3D _camera;
+    [Export] private Camera3D _camera;
     private RayCast3D _ray = new RayCast3D();
     public override void _Ready()
     {
@@ -15,31 +16,38 @@ public partial class Interactor : Node3D
     {
         _ray.GlobalPosition = _camera.GlobalPosition;
         _ray.GlobalRotation = _camera.GlobalRotation;
+
+        if (Input.IsActionJustReleased("interact"))
+        {
+            if (_ray.IsColliding())
+            {
+                var collider = _ray.GetCollider();
+                if (collider is FacilityButton fb)
+                {
+                    fb.InteractRelease();
+                }
+            }
+
+        }
     }
 
-    private void CheckRaycast()
-    {
-        if (_ray.IsColliding())
-        {
-            if (_ray.GetCollider() is FacilityButton fb)
-            {
-                fb.Press();
-            }
-        }
-        else
-        {
-            GD.Print("shjit");
-        }
-    }
+    // need to just check released and unrealeased
     public override void _UnhandledInput(InputEvent @event)
     {
-
         if (@event is InputEvent action)
         {
-            if (action.IsAction("interact"))
+            if (Input.IsActionPressed("interact"))
             {
-                CheckRaycast();
+                if (_ray.IsColliding())
+                {
+                    var collider = _ray.GetCollider();
+                    if (collider is FacilityButton fb)
+                    {
+                        fb.Interact();
+                    }
+                }
             }
         }
+
     }
 }
