@@ -922,6 +922,46 @@ _distanceToMove = 0.03
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control_Room_Blockout_1/Control_Panel_Test_1/Control_Panel_Test/TEST_SEQUENCE/TestPuzzle_Btn_06/Button_Large_Top/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_dnecx")
 
+[node name="TestPuzzle_Dial_03" type="MeshInstance3D" parent="Control_Room_Blockout_1/Control_Panel_Test_1/Control_Panel_Test/TEST_SEQUENCE"]
+transform = Transform3D(0.631615, 0.00854783, 0, -0.0170319, 0.31699, 0, 0, 0, 0.631843, -0.232125, -0.00265896, -0.217316)
+mesh = SubResource("ArrayMesh_gdxjc")
+skeleton = NodePath("")
+
+[node name="Dial_1_Top" type="MeshInstance3D" parent="Control_Room_Blockout_1/Control_Panel_Test_1/Control_Panel_Test/TEST_SEQUENCE/TestPuzzle_Dial_03"]
+transform = Transform3D(0.225223, 0, 0.618794, 0, 2.25343, 0, -0.618794, 0, 0.225223, 2.84218e-16, 0.0448516, 1.42111e-16)
+mesh = SubResource("ArrayMesh_040jo")
+skeleton = NodePath("")
+script = ExtResource("1_d3his")
+_IType = 2
+ButtonTag = "p1_dial1"
+_distanceToMove = 140.0
+_timeToFullyMove = 0.2
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Control_Room_Blockout_1/Control_Panel_Test_1/Control_Panel_Test/TEST_SEQUENCE/TestPuzzle_Dial_03/Dial_1_Top"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control_Room_Blockout_1/Control_Panel_Test_1/Control_Panel_Test/TEST_SEQUENCE/TestPuzzle_Dial_03/Dial_1_Top/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_h2roy")
+
+[node name="TestPuzzle_Dial_04" type="MeshInstance3D" parent="Control_Room_Blockout_1/Control_Panel_Test_1/Control_Panel_Test/TEST_SEQUENCE"]
+transform = Transform3D(0.631615, 0.00854783, 0, -0.0170319, 0.31699, 0, 0, 0, 0.631843, -0.232125, -0.00265896, -0.107161)
+mesh = SubResource("ArrayMesh_gdxjc")
+skeleton = NodePath("")
+
+[node name="Dial_1_Top" type="MeshInstance3D" parent="Control_Room_Blockout_1/Control_Panel_Test_1/Control_Panel_Test/TEST_SEQUENCE/TestPuzzle_Dial_04"]
+transform = Transform3D(0.225223, 0, -0.618794, 0, 2.25343, 0, 0.618794, 0, 0.225223, 2.84218e-16, 0.0448516, 1.42111e-16)
+mesh = SubResource("ArrayMesh_040jo")
+skeleton = NodePath("")
+script = ExtResource("1_d3his")
+_IType = 2
+ButtonTag = "p1_dial2"
+_distanceToMove = -140.0
+_timeToFullyMove = 0.2
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Control_Room_Blockout_1/Control_Panel_Test_1/Control_Panel_Test/TEST_SEQUENCE/TestPuzzle_Dial_04/Dial_1_Top"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control_Room_Blockout_1/Control_Panel_Test_1/Control_Panel_Test/TEST_SEQUENCE/TestPuzzle_Dial_04/Dial_1_Top/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_h2roy")
+
 [node name="TestPuzzle_Dial_01" type="MeshInstance3D" parent="Control_Room_Blockout_1/Control_Panel_Test_1/Control_Panel_Test/TEST_SEQUENCE"]
 transform = Transform3D(0.631615, 0.00854784, 0, -0.0170319, 0.31699, 0, 0, 0, 0.631843, -0.232125, -0.00265896, 0.00300166)
 mesh = SubResource("ArrayMesh_gdxjc")
@@ -933,6 +973,7 @@ mesh = SubResource("ArrayMesh_040jo")
 skeleton = NodePath("")
 script = ExtResource("1_d3his")
 _IType = 2
+ButtonTag = "p1_dial3_redHerring"
 _distanceToMove = 50.0
 _timeToFullyMove = 0.071
 
@@ -952,50 +993,13 @@ mesh = SubResource("ArrayMesh_040jo")
 skeleton = NodePath("")
 script = ExtResource("1_d3his")
 _IType = 2
+ButtonTag = "p1_dial4"
 _distanceToMove = 70.0
 _timeToFullyMove = 0.1
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control_Room_Blockout_1/Control_Panel_Test_1/Control_Panel_Test/TEST_SEQUENCE/TestPuzzle_Dial_02/Dial_1_Top"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control_Room_Blockout_1/Control_Panel_Test_1/Control_Panel_Test/TEST_SEQUENCE/TestPuzzle_Dial_02/Dial_1_Top/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_h2roy")
-
-[node name="TestPuzzle_Dial_03" type="MeshInstance3D" parent="Control_Room_Blockout_1/Control_Panel_Test_1/Control_Panel_Test/TEST_SEQUENCE"]
-transform = Transform3D(0.631615, 0.00854784, 0, -0.0170319, 0.31699, 0, 0, 0, 0.631843, -0.232125, -0.00265896, -0.217316)
-mesh = SubResource("ArrayMesh_gdxjc")
-skeleton = NodePath("")
-
-[node name="Dial_1_Top" type="MeshInstance3D" parent="Control_Room_Blockout_1/Control_Panel_Test_1/Control_Panel_Test/TEST_SEQUENCE/TestPuzzle_Dial_03"]
-transform = Transform3D(0.225223, 0, 0.618794, 0, 2.25343, 0, -0.618794, 0, 0.225223, 2.84218e-16, 0.0448516, 1.42111e-16)
-mesh = SubResource("ArrayMesh_040jo")
-skeleton = NodePath("")
-script = ExtResource("1_d3his")
-_IType = 2
-_distanceToMove = 140.0
-_timeToFullyMove = 0.2
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Control_Room_Blockout_1/Control_Panel_Test_1/Control_Panel_Test/TEST_SEQUENCE/TestPuzzle_Dial_03/Dial_1_Top"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Control_Room_Blockout_1/Control_Panel_Test_1/Control_Panel_Test/TEST_SEQUENCE/TestPuzzle_Dial_03/Dial_1_Top/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_h2roy")
-
-[node name="TestPuzzle_Dial_04" type="MeshInstance3D" parent="Control_Room_Blockout_1/Control_Panel_Test_1/Control_Panel_Test/TEST_SEQUENCE"]
-transform = Transform3D(0.631615, 0.00854784, 0, -0.0170319, 0.31699, 0, 0, 0, 0.631843, -0.232125, -0.00265896, -0.107161)
-mesh = SubResource("ArrayMesh_gdxjc")
-skeleton = NodePath("")
-
-[node name="Dial_1_Top" type="MeshInstance3D" parent="Control_Room_Blockout_1/Control_Panel_Test_1/Control_Panel_Test/TEST_SEQUENCE/TestPuzzle_Dial_04"]
-transform = Transform3D(0.225223, 0, -0.618794, 0, 2.25343, 0, 0.618794, 0, 0.225223, 2.84218e-16, 0.0448516, 1.42111e-16)
-mesh = SubResource("ArrayMesh_040jo")
-skeleton = NodePath("")
-script = ExtResource("1_d3his")
-_IType = 2
-_distanceToMove = -140.0
-_timeToFullyMove = 0.2
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Control_Room_Blockout_1/Control_Panel_Test_1/Control_Panel_Test/TEST_SEQUENCE/TestPuzzle_Dial_04/Dial_1_Top"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Control_Room_Blockout_1/Control_Panel_Test_1/Control_Panel_Test/TEST_SEQUENCE/TestPuzzle_Dial_04/Dial_1_Top/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_h2roy")
 
 [node name="Button_Large_Bottom" type="MeshInstance3D" parent="Control_Room_Blockout_1/Control_Panel_Test_1/Control_Panel_Test"]

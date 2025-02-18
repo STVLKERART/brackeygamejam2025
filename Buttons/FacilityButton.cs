@@ -105,6 +105,7 @@ public partial class FacilityButton : MeshInstance3D
         await MoveYAsync(_distanceToMove, _timeToFullyMove, true);
         isAnimating = false;
         pressed = true;
+        Pressed?.Invoke(ButtonTag);
     }
 
     private async void EndButtonPress()

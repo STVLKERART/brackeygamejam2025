@@ -30,7 +30,6 @@ _speed = 3.0
 script = ExtResource("5_wdboo")
 _countdownMonitor = NodePath("../CountdownMonitor")
 _confettiNode = NodePath("../ConfettiPoint")
-_initialCountdown = 2.0
 _buttonTagList = Array[String](["purple_test"])
 
 [node name="CountdownMonitor" parent="." instance=ExtResource("6_km1ce")]
