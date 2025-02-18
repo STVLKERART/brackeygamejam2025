@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Buttons/FacilityButton.cs" id="1_ltd0f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_no4ln"]
-size = Vector3(0.5, 0.5, 0.5)
+size = Vector3(0.412292, 0.276245, 0.418854)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b75al"]
 albedo_color = Color(1, 0.164706, 1, 1)
@@ -78,13 +78,12 @@ _data = {
 "button_unpressed": SubResource("Animation_av7t4")
 }
 
-[node name="Button" type="StaticBody3D" node_paths=PackedStringArray("anim")]
+[node name="Button" type="StaticBody3D"]
 script = ExtResource("1_ltd0f")
 ButtonTag = "purple_test"
-anim = NodePath("AnimationPlayer")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.143996, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00119019, 0.0321186, 0.00563049)
 shape = SubResource("BoxShape3D_no4ln")
 
 [node name="Meshes" type="Node3D" parent="."]
@@ -96,6 +95,7 @@ material = SubResource("StandardMaterial3D_b75al")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Meshes"]
 transform = Transform3D(8.8253, -0.0375992, -0.0389443, 0.0338301, -1.12588, 8.75329, -0.0422597, -8.75327, -1.12571, 0, 0, 0)
+visible = false
 size = Vector3(0.1, 0.1, 0.01)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -1,4 +1,6 @@
-[gd_scene load_steps=27 format=4 uid="uid://beepgbryoiiic"]
+[gd_scene load_steps=28 format=4 uid="uid://beepgbryoiiic"]
+
+[ext_resource type="Script" path="res://Buttons/FacilityButton.cs" id="1_d3his"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s3qdt"]
 resource_name = "standardSurface1"
@@ -374,6 +376,7 @@ shape = SubResource("ConcavePolygonShape3D_dgee3")
 transform = Transform3D(4.31624, 0, 5.40486, 0, 6.10409, 0, -4.31624, 0, 5.40486, 2.31529, 1.44322, -2.93143)
 mesh = SubResource("ArrayMesh_ssuok")
 skeleton = NodePath("")
+script = ExtResource("1_d3his")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Control_Room_Blockout_1/Floor_Scale/Monitor"]
 

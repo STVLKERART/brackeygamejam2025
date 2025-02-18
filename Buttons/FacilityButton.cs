@@ -1,15 +1,19 @@
 using Godot;
 using System;
+using System.Threading.Tasks;
 
 
-public partial class FacilityButton : StaticBody3D
+public partial class FacilityButton : MeshInstance3D
 {
     [Export] public string ButtonTag { get; private set; }
-    [Export] private AnimationPlayer anim;
     public event Action<string> Pressed;
+    
+    [Export] float _distanceToMove = 0.1f;
+    [Export] float _timeToFullyDepress = 0.05f;
+
+    bool isAnimating = false;
     bool pressed = false;
     bool releaseBuffer = false;
-    bool holding = false; // is only false when the button is in a completely neutral, unpressed state
 
 
     public override void _Ready()
@@ -17,45 +21,71 @@ public partial class FacilityButton : StaticBody3D
         GameRoot.AddFacilityButton(this);
     }
 
+    public override void _PhysicsProcess(double delta)
+    {
+        if (pressed && !isAnimating && releaseBuffer)
+        {
+            EndPress();
+        }
+    }
+
     public void Interact()
     {
-        if (!holding)
+        if (!pressed && !isAnimating)
         {
-            GD.Print("ff");
-            holding = true;
-            anim.Play("button_pressed");
+            StartPress();
         }
     }
 
     public void InteractRelease()
     {
-        if (pressed)
+        if (pressed && !isAnimating)
         {
-            anim.Play("button_unpressed");
+            EndPress();
         }
         else
         {
             releaseBuffer = true;
-    } 
+        }
     }
 
-    public void Press()
+    private async void StartPress()
     {
-        Pressed?.Invoke(ButtonTag);
+        isAnimating = true;
+        await MoveYAsync(_distanceToMove, _timeToFullyDepress, true);
+        isAnimating = false;
         pressed = true;
-        if (releaseBuffer)
-            InteractRelease();
     }
 
-    public void Unpress()
+    private async void EndPress()
     {
+        isAnimating = true;
+        await MoveYAsync(_distanceToMove, _timeToFullyDepress, false);
+        isAnimating = false;
         pressed = false;
+        releaseBuffer = false;
     }
 
-    public void Unpressed()
+    private async Task MoveYAsync(float distance, float duration, bool pressDown)
     {
-        holding = false;
+        Vector3 startPos = Position;
+        Vector3 targetPos = Vector3.Zero;
+        if (pressDown)
+            targetPos = startPos - new Vector3(0, distance, 0);
+        else
+            targetPos = startPos + new Vector3(0, distance, 0);
+        float elapsedTime = 0f;
+
+        float deltaTime = (float)GetPhysicsProcessDeltaTime();
+
+        while (elapsedTime < duration)
+        {
+            float t = elapsedTime / duration;
+            Position = startPos.Lerp(targetPos, t);
+            await ToSignal(GetTree().CreateTimer(deltaTime), "timeout");
+            elapsedTime += deltaTime;
+        }
+        // Ensure the final position is exact.
+        Position = targetPos;
     }
-
-
 }

@@ -21,8 +21,8 @@ public partial class Interactor : Node3D
         {
             if (_ray.IsColliding())
             {
-                var collider = _ray.GetCollider();
-                if (collider is FacilityButton fb)
+                Node parent = (_ray.GetCollider() as Node3D)?.GetParent();
+                if (parent is FacilityButton fb)
                 {
                     fb.InteractRelease();
                 }
@@ -38,10 +38,11 @@ public partial class Interactor : Node3D
         {
             if (Input.IsActionPressed("interact"))
             {
+                GD.Print("Interacted");
                 if (_ray.IsColliding())
                 {
-                    var collider = _ray.GetCollider();
-                    if (collider is FacilityButton fb)
+                    Node parent = (_ray.GetCollider() as Node3D)?.GetParent();
+                    if (parent is FacilityButton fb)
                     {
                         fb.Interact();
                     }
