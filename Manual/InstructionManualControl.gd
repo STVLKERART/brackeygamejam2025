@@ -41,6 +41,7 @@ func _input(event):
 		if not rotating and current_page > 0:
 			start_bkwd_rotation(rotation_time)
 
+
 func start_fwd_rotation(duration: float):
 	rotating = true
 	set_mobile_page_textures() # Update page textures
