@@ -37,7 +37,7 @@ public partial class FacilityButton : MeshInstance3D
                     // Handle lever logic (rotate Z)
                     break;
                 case InteractableType.Dial:
-                    EndDialRotate();// Handle dial logic (rotate Y)
+                    //EndDialRotate();// Handle dial logic (rotate Y)
                     break;
                 case InteractableType.Slider:
                     // Handle slider logic (move X or Z)
@@ -48,17 +48,22 @@ public partial class FacilityButton : MeshInstance3D
 
     public void Interact()
     {
-        if (pressed || isAnimating) return;
         switch (_IType)
         {
             case InteractableType.Button:
-                StartButtonPress();
+                if (!pressed && !isAnimating)
+                    StartButtonPress();
                 break;
             case InteractableType.Lever:
                 // Handle lever logic (rotate Z)
                 break;
             case InteractableType.Dial:
-                StartDialRotate();// Handle dial logic (rotate Y)
+                if (!pressed && !isAnimating)
+                    StartDialRotate();// Handle dial logic (rotate Y)
+
+                if (pressed && !isAnimating)
+                    EndDialRotate();
+
                 break;
             case InteractableType.Slider:
                 // Handle slider logic (move X or Z)
@@ -85,14 +90,7 @@ public partial class FacilityButton : MeshInstance3D
                 break;
             case InteractableType.Dial:
                 // Handle dial logic (rotate Y)
-                if (pressed && !isAnimating)
-                {
-                    EndDialRotate();
-                }
-                else
-                {
-                    releaseBuffer = true;
-                }
+                
                 break;
             case InteractableType.Slider:
                 // Handle slider logic (move X or Z)
@@ -173,7 +171,7 @@ public partial class FacilityButton : MeshInstance3D
 
         float deltaTime = (float)GetPhysicsProcessDeltaTime();
 
-        GD.Print("alo guvnr");
+        //GD.Print("alo guvnr");
 
         while (elapsedTime < duration)
         {
