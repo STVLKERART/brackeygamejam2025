@@ -9,6 +9,7 @@ using System.Linq;
 public partial class MeltdownProgress : Node
 {
 	[Export] CountdownMonitor countdownMonitor;
+    [Export] Node3D ConfettiNode;
 	[Export] float _initialCountdown = 10f;
     List<FacilityButton> buttonList = new List<FacilityButton>(); // doesnt do anything but we need to keep the reference
 	[Export]Array<string> _buttonTagList;
@@ -22,7 +23,7 @@ public partial class MeltdownProgress : Node
     {
         buttonList.Add(button);
         if (button.ButtonTag != null) 
-            RadDebug.SetItem(button.ButtonTag, "");
+            RadDebug.SetItem(button.ButtonTag, ""); // add an item
         button.Pressed += ActivateButtonLogic;
 
     }
@@ -32,15 +33,14 @@ public partial class MeltdownProgress : Node
 
         if (_buttonTagList.Last() == name)
         {
-            RadDebug.RemoveItem(name);
             _buttonTagList.Remove(name);
         }
         if (_buttonTagList.Count == 0)
             GD.Print("Game Over!!");
 
-        if (name == "confetti_button")
+        if (name == "confetti")
         {
-            // confetti logic
+            ConfettiNode.Call("spray_confetti");
         } 
     }
 }
