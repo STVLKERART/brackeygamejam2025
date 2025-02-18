@@ -1,10 +1,11 @@
 using Godot;
+using RadPipe;
 using System;
 using System.Threading.Tasks;
 
 public enum InteractableType { Button, Lever, Dial, Slider}
 
-public partial class FacilityButton : MeshInstance3D
+public partial class FacilityButton : Node3D
 {
     [Export] public InteractableType _IType;
     [Export] public string ButtonTag { get; private set; }
@@ -12,7 +13,10 @@ public partial class FacilityButton : MeshInstance3D
     
     [Export] float _distanceToMove = 0.1f;
     [Export] float _timeToFullyMove = 0.05f;
+    [Export] AudioStream ButtonPressSound;
+    [Export] AudioStream ButtonUnpressSound;
 
+    RadAudioStreamPlayer _radPlayer = new RadAudioStreamPlayer();
     bool isAnimating = false;
     bool pressed = false;
     bool releaseBuffer = false;
@@ -20,6 +24,9 @@ public partial class FacilityButton : MeshInstance3D
 
     public override void _Ready()
     {
+        ButtonPressSound = GD.Load<AudioStream>("res://Sounds/PressButton.wav");
+        ButtonUnpressSound = GD.Load<AudioStream>("res://Sounds/UnpressButton.wav");
+        AddChild(_radPlayer);
         GameRoot.AddFacilityButton(this);
     }
 
@@ -106,6 +113,7 @@ public partial class FacilityButton : MeshInstance3D
         isAnimating = false;
         pressed = true;
         Pressed?.Invoke(ButtonTag);
+        _radPlayer.PlaySound(ButtonPressSound);
     }
 
     private async void EndButtonPress()
@@ -115,6 +123,7 @@ public partial class FacilityButton : MeshInstance3D
         isAnimating = false;
         pressed = false;
         releaseBuffer = false;
+        _radPlayer.PlaySound(ButtonUnpressSound);
     }
 
     private async Task MoveYAsync(float distance, float duration, bool pressDown)

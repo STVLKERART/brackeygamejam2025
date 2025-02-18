@@ -1,8 +1,7 @@
 using Godot;
 using Godot.Collections;
 using RadPipe.Debug;
-using System;
-using System.Collections.Generic;
+//using System.Collections.Generic;
 using System.Linq;
 
 
@@ -12,8 +11,8 @@ public partial class MeltdownProgress : Node
     [Export] Node3D _confettiNode;
 	[Export] float _initialCountdown = 180f;
     float _remainingCountdown;
-    List<FacilityButton> _buttonList = new List<FacilityButton>(); // doesnt do anything but we need to keep the reference
-	[Export] Array<string> _buttonTagList;
+    [Export] Array<string> TaskList;
+    Dictionary<string, FacilityButton> buttonList;
 
     public override void _Ready()
     {
@@ -45,48 +44,59 @@ public partial class MeltdownProgress : Node
         _countdownMonitor.SetCountdownValue(formattedTime);
     }
 
-
-
     public void AddFacilityButton(FacilityButton button)
     {
-        _buttonList.Add(button);
-
-        if (button.ButtonTag != null) 
+        buttonList.Add(button.ButtonTag, button);
+        if (button.ButtonTag != null)
             RadDebug.SetItem(button.ButtonTag, ""); // add an item
         else
-            GD.Print("Button has no tag");
-
-        button.Pressed += ActivateButtonLogic;
+            GD.Print("Button has no tag"); // j- we might not care that a button has no tag, it can be a dead button
+        button.Pressed += CheckTaskList;
 
     }
 
-    private void ActivateButtonLogic(string name)
+    private void CheckTaskList(string tag)
     {
-        /* Noah here - sitting here deep in thought about this shit
-         *  My gut feeling is that I dont like this bc it requires a specific order to do things
-         *  BUT its a game jam and we want rapid prototyping & doing it a different way could add complexity
-         *  
-         *  One actual issue: buttons are added in random order unless theres some magic with
-         *      godot scene hierarchy and order of '_Ready()' calls
-         *  SOLVED: just tested it and yes it is executed in order that they appear in the scene hierarchy
-         *  
-         *  Second issue: I was going to make a 'puzzle' with dials in which when all 3 of them are at the
-         *      same orientation (pressed, !pressed, pressed (in the way I had them set up)),
-         *      then something would happen like a light would turn on, or something made available that
-         *      wasnt available prior.
-         *  POTENTIAL SOLUTION: guh brain fried and i lost it
-         */
-        if (_buttonTagList.Last() == name)
-        {
-            _buttonTagList.Remove(name);
-        }
-        if (_buttonTagList.Count == 0)
-            GD.Print("Game Over!!");
+        // this is jsut a big list of checking the TaskList, completed tasks should be removed from the list
+        // usually as TaskList.First() but theres wiggle room to do arbitrary tasks
 
-        if (name == "confetti")
+        if (TaskList.First() == tag) // this is just pressing the button with the same tag // ez pz
+        {
+            TaskList.Remove(tag);
+        }
+
+        if (TaskList.First() == "theBigThree") // if we want three buttons to be a certain value
+        {
+            // first we get them (Dctionary<buttonTag, FacilityButton>) 
+            // we can probably make this in _Ready to save on calls
+            buttonList.TryGetValue("oneOfThree", out var oneOfThree); // var is just shorthand for FacilityButton
+            buttonList.TryGetValue("twoOfThree", out var twoOfThree);
+            buttonList.TryGetValue("threeOfThree", out var threeOfThree);
+
+            var oneOf = (FacilityDialButton)oneOfThree;
+            var twoOf = (FacilityDialButton)oneOfThree;
+            var threeOf = (FacilityDialButton)oneOfThree;
+           
+            //then check dials for wahtever variables
+            // maybe liek this?
+            // if oneOf.DialAngle == 10 && twoOf.DialAngle < 10 %% threeOF.DialAngle == 0
+            //      TaskList.Remove("theBigThree");
+        }
+
+        if (TaskList.First() == "DoGroceryShopping")
+        {
+            // any logic that can decide if grocery shopping is done
+            // TaskList.Remove("DoGroceryShopping");
+        }
+
+        if (tag == "confetti") // here is just a random tag check, doesnt need to be on the task list
         {
             _confettiNode.Call("spray_confetti");
         } 
+
+        if (TaskList.Count != 0) return;// game over will only happen when we reach zero tasks left
+        GD.Print("Game Over!!");
+
     }
 }
 
