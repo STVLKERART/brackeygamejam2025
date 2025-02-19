@@ -12,7 +12,7 @@ public partial class MeltdownProgress : Node
 	[Export] float _initialCountdown = 180f;
     float _remainingCountdown;
     [Export] Array<string> TaskList;
-    Dictionary<string, FacilityButton> buttonList;
+    Dictionary<string, FacilityButton> buttonList = new Dictionary<string, FacilityButton>();
 
     public override void _Ready()
     {
@@ -47,11 +47,11 @@ public partial class MeltdownProgress : Node
     public void AddFacilityButton(FacilityButton button)
     {
         buttonList.Add(button.ButtonTag, button);
-        if (button.ButtonTag != null)
+        if (button.ButtonTag != "")
             RadDebug.SetItem(button.ButtonTag, ""); // add an item
         else
             GD.Print("Button has no tag"); // j- we might not care that a button has no tag, it can be a dead button
-        button.Pressed += CheckTaskList;
+        button.StateChanged += CheckTaskList;
 
     }
 

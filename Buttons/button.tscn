@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfa5j75ium1ff"]
+[gd_scene load_steps=8 format=3 uid="uid://dcuotwoypdh8v"]
 
-[ext_resource type="Script" path="res://Buttons/FacilityButton.cs" id="1_ltd0f"]
+[ext_resource type="Script" path="res://Buttons/Scripts/FacilityButton.cs" id="1_ltd0f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_no4ln"]
 size = Vector3(0.412292, 0.276245, 0.418854)
@@ -95,7 +95,6 @@ material = SubResource("StandardMaterial3D_b75al")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Meshes"]
 transform = Transform3D(8.8253, -0.0375992, -0.0389443, 0.0338301, -1.12588, 8.75329, -0.0422597, -8.75327, -1.12571, 0, 0, 0)
-visible = false
 size = Vector3(0.1, 0.1, 0.01)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -30,7 +30,7 @@ public partial class PlayerCharacter : CharacterBody3D
 		Vector3 direction = (_head.GlobalTransform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized(); // obviously using a head node here to avoid wacky rotations
 
 		// clamping the head so the player cant backflip the camera
-		_head.RotateY(Mathf.DegToRad(-MouseMotion.X * _cameraSense));
+		RotateY(Mathf.DegToRad(-MouseMotion.X * _cameraSense));
 		float newRotationX = Mathf.Clamp(
 			_firstPersonCamera.RotationDegrees.X - (MouseMotion.Y * _cameraSense),
 			-89f, 89f
