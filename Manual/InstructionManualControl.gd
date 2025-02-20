@@ -1,5 +1,6 @@
 extends Node3D
 
+@export var delete_collider: bool = false;
 @onready var MI_leftPage: ShaderMaterial = $Book/Mesh_PageL.get_child(0).get_surface_override_material(0)
 @onready var MI_rightPage: ShaderMaterial = $Book/Mesh_PageR.get_child(0).get_surface_override_material(0)
 @onready var pivot: Node3D = $Book/Pivot
@@ -21,6 +22,8 @@ var rotating: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if delete_collider:
+		$StaticBody3D.queue_free();
 	if MI_leftPage:
 		MI_leftPage.set_shader_parameter("tex_frg_2", T_page_blank)
 	
@@ -33,11 +36,11 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _input(event):
-	if event is InputEventKey and event.pressed and event.keycode == KEY_P:
+func _unhandled_input(event):
+	if Input.is_action_just_pressed("left"):
 		if not rotating and current_page + 1 < T_pages.size():
 			start_fwd_rotation(rotation_time)
-	elif event is InputEventKey and event.pressed and event.keycode == KEY_O:
+	elif Input.is_action_just_pressed("right"):
 		if not rotating and current_page > 0:
 			start_bkwd_rotation(rotation_time)
 

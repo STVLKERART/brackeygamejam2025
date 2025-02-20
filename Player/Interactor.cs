@@ -7,11 +7,16 @@ public partial class Interactor : Node3D
     [Export] private Camera3D _camera;
     private RayCast3D _ray = new RayCast3D();
     private FacilityButton _currentButton;
+    Script manualClass;
+    Action PickedUpManual;
+
     public override void _Ready()
     {
         AddChild(_ray);
         _ray.TargetPosition = new(0, 0, -10);
         _ray.CollisionMask = 2; // BUTTONS ARE ON LAYER 2
+
+        manualClass = ResourceLoader.Load("res://Manual/InstructionManualControl.gd") as Script;
     }
 
     public override void _PhysicsProcess(double delta)
@@ -28,11 +33,23 @@ public partial class Interactor : Node3D
                 {
                     _currentButton = null;
                     fb.InteractRelease();
-
                 }
             }
-
         }
+        if (Input.IsActionJustPressed("interact"))
+        {
+            if (_ray.IsColliding())
+            {
+                Node parent = (_ray.GetCollider() as Node3D)?.GetParent();
+
+                if (parent.GetScript().As<Script>() == manualClass)
+                {
+                    parent.QueueFree();
+                    PickedUpManual?.Invoke();
+                }
+            }
+        }
+
     }
 
     // need to just check released and unrealeased

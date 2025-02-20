@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqrem1yq8jafm"]
+[gd_scene load_steps=7 format=3 uid="uid://bqrem1yq8jafm"]
 
 [ext_resource type="Script" path="res://Player/PlayerCharacter.cs" id="1_ue1es"]
 [ext_resource type="Script" path="res://Player/Interactor.cs" id="2_iok1l"]
 [ext_resource type="PackedScene" uid="uid://dt34owgp0uswm" path="res://Assets/Objects-Meshes/Pointer_Test.fbx" id="3_g3lri"]
+[ext_resource type="Script" path="res://Player/HeldManual.cs" id="4_5cfxi"]
+[ext_resource type="PackedScene" uid="uid://epuri8hjaywa" path="res://Manual/InstructionManual.tscn" id="5_ql56e"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y61i3"]
 
@@ -15,6 +17,17 @@ _head = NodePath("Neck")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.2)
 
 [node name="Camera" type="Camera3D" parent="Neck"]
+
+[node name="ManualHolder" type="Node3D" parent="Neck/Camera" node_paths=PackedStringArray("ManualNode", "Character")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0.2)
+script = ExtResource("4_5cfxi")
+ManualNode = NodePath("InstructionManual")
+Character = NodePath("../../..")
+
+[node name="InstructionManual" parent="Neck/Camera/ManualHolder" instance=ExtResource("5_ql56e")]
+transform = Transform3D(0.939693, 0, 0.34202, 0, 1, 0, -0.34202, 0, 0.939693, 0, 1.51, -0.965)
+visible = false
+delete_collider = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

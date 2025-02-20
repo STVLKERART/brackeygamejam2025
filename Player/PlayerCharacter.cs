@@ -1,7 +1,8 @@
 using Godot;
 
 public partial class PlayerCharacter : CharacterBody3D
-{
+{ 
+
 	[Export] private float _speed = 15.0f;
 	[Export] private float _cameraSense = 0.1f;
 	[Export] private float _grivity = 9.8f;
@@ -10,8 +11,11 @@ public partial class PlayerCharacter : CharacterBody3D
 	bool Dragging = false;
 	Vector2 MouseMotion;
 
+	bool movementEnabled = true;
+
 	public override void _PhysicsProcess(double delta)
 	{
+		if (!movementEnabled) return;
 		// self explanitory i think
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 
@@ -53,9 +57,15 @@ public partial class PlayerCharacter : CharacterBody3D
 	// unhandledInput calls if the input isnt caputured by something like UI
 	public override void _UnhandledInput(InputEvent @event) 
 	{
-		if (@event is InputEventMouseMotion motion)
+        if (!movementEnabled) return;
+        if (@event is InputEventMouseMotion motion)
 		{
 			MouseMotion = motion.Relative;
 		}
+	}
+
+	public void DisableMovement(bool state)
+	{
+		movementEnabled = !state;
 	}
 }
