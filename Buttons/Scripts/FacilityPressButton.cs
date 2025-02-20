@@ -24,19 +24,6 @@ public partial class FacilityPressButton : FacilityButton
     {
         if (!isAnimating && !IsPressed)
             StartButtonPress();
-
-        if (signalConnected == false) // this is ew but it how it is, jerry
-        {
-            _body.MouseExited += HandleMouseExit;
-            signalConnected = true;
-        }
-    }
-
-    private void HandleMouseExit()
-    {
-        _body.MouseExited -= HandleMouseExit;
-        signalConnected = false;
-        InteractRelease();
     }
 
     public override void InteractRelease()
@@ -49,7 +36,7 @@ public partial class FacilityPressButton : FacilityButton
     private void StartButtonPress()
     {
         _animationPlayer.Play("Press");
-        _radPlayer.PlaySound(ButtonPressSound);
+        
     }
     private void EndButtonPress()
     {
@@ -69,6 +56,7 @@ public partial class FacilityPressButton : FacilityButton
     public void Pressed()
     {
         IsPressed = true;
+        _radPlayer.PlaySound(ButtonPressSound);
         StateChanged?.Invoke(ButtonTag);
     }
 

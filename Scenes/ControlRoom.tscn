@@ -1,8 +1,11 @@
-[gd_scene load_steps=39 format=4 uid="uid://beepgbryoiiic"]
+[gd_scene load_steps=42 format=4 uid="uid://beepgbryoiiic"]
 
 [ext_resource type="Script" path="res://Buttons/Scripts/FacilityButton.cs" id="1_d3his"]
 [ext_resource type="PackedScene" uid="uid://bne16lmf4x5tr" path="res://Buttons/BigPressButton.tscn" id="2_o2fcm"]
 [ext_resource type="PackedScene" uid="uid://cai4w8ddf6v28" path="res://Buttons/DialButton.tscn" id="3_du6eh"]
+[ext_resource type="PackedScene" uid="uid://b7q7u1a8mmjsk" path="res://FunStuff/ConfettiPoint.tscn" id="4_p0xxv"]
+[ext_resource type="AudioStream" uid="uid://cat6qfk5qqvf5" path="res://Assets/Sounds/VHSBuzz.mp3" id="5_ocsek"]
+[ext_resource type="AudioStream" uid="uid://ecpg6fsei0v8" path="res://Assets/Sounds/FanNoise.mp3" id="6_4br3t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s3qdt"]
 resource_name = "standardSurface1"
@@ -583,3 +586,25 @@ transform = Transform3D(0.841077, -0.540916, 0, 0.540916, 0.841077, 0, 0, 0, 1, 
 
 [node name="DialButton" parent="." instance=ExtResource("3_du6eh")]
 transform = Transform3D(0.789641, -0.613569, 0, 0.613569, 0.789641, 0, 0, 0, 1, 2.96393, 0.77497, 0.372096)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+visible = false
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+
+[node name="ConfettiPoint" parent="." instance=ExtResource("4_p0xxv")]
+transform = Transform3D(1, 0, 0, 0, 0.871668, 0.490098, 0, -0.490098, 0.871668, 0, 1.08021, 3.55208)
+
+[node name="MonitorAmbient" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.29998, 1.4341, -2.91958)
+stream = ExtResource("5_ocsek")
+volume_db = -20.0
+autoplay = true
+
+[node name="WhiteNoise" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000819117, 3.807, 0.00346419)
+stream = ExtResource("6_4br3t")
+volume_db = -33.0
+autoplay = true
