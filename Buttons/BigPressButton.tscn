@@ -151,7 +151,7 @@ _data = {
 }
 
 [node name="BigPressButton" type="MeshInstance3D" node_paths=PackedStringArray("_animationPlayer")]
-transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, -0.0124484, -8.36653e-10, 0)
+transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_b8186")
 script = ExtResource("1_yfxge")
 ButtonPressSound = ExtResource("2_p2dgp")

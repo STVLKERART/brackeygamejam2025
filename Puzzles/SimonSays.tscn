@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=3 uid="uid://bdxnghqmeu8sr"]
+
+[ext_resource type="Script" path="res://Scenes/SimonSays.cs" id="1_c5jqu"]
+[ext_resource type="PackedScene" uid="uid://bne16lmf4x5tr" path="res://Buttons/BigPressButton.tscn" id="2_63du8"]
+[ext_resource type="Script" path="res://Puzzles/SimonSaysScreen.cs" id="3_ki7xb"]
+[ext_resource type="PackedScene" uid="uid://de50jnu5agv5p" path="res://Puzzles/SimonSaysScreen.tscn" id="3_pr73j"]
+[ext_resource type="PackedScene" uid="uid://cai4w8ddf6v28" path="res://Buttons/DialButton.tscn" id="5_vt8a0"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_gtrwp"]
+viewport_path = NodePath("Screen/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_23vm2"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_gtrwp")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ak4yq"]
+material = SubResource("StandardMaterial3D_23vm2")
+
+[node name="SimonSaysButtons" type="Node3D" node_paths=PackedStringArray("buttonList", "PlayButton", "TurnOnScreen")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_c5jqu")
+buttonList = [NodePath("BigPressButton"), NodePath("BigPressButton2"), NodePath("BigPressButton3"), NodePath("BigPressButton4"), NodePath("BigPressButton5"), NodePath("BigPressButton6"), NodePath("BigPressButton7"), NodePath("BigPressButton8"), NodePath("BigPressButton9")]
+PlayButton = NodePath("StartButton")
+TurnOnScreen = NodePath("OnOffDial")
+rounds = 4
+
+[node name="BigPressButton" parent="." instance=ExtResource("2_63du8")]
+ButtonTag = "ss1"
+
+[node name="BigPressButton2" parent="." instance=ExtResource("2_63du8")]
+transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, -0.2)
+ButtonTag = "ss2"
+
+[node name="BigPressButton3" parent="." instance=ExtResource("2_63du8")]
+transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, -0.012, 0, -0.4)
+ButtonTag = "ss3"
+
+[node name="BigPressButton4" parent="." instance=ExtResource("2_63du8")]
+transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0.2, 0, 0)
+ButtonTag = "ss4"
+
+[node name="BigPressButton5" parent="." instance=ExtResource("2_63du8")]
+transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0.2, 0, -0.2)
+ButtonTag = "ss5"
+
+[node name="BigPressButton6" parent="." instance=ExtResource("2_63du8")]
+transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0.2, 0, -0.4)
+ButtonTag = "ss6"
+
+[node name="BigPressButton7" parent="." instance=ExtResource("2_63du8")]
+transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0.4, 0, 0)
+ButtonTag = "ss7"
+
+[node name="BigPressButton8" parent="." instance=ExtResource("2_63du8")]
+transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0.4, 0, -0.2)
+ButtonTag = "ss8"
+
+[node name="BigPressButton9" parent="." instance=ExtResource("2_63du8")]
+transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0.4, 0, -0.4)
+ButtonTag = "ss9"
+
+[node name="Screen" type="MeshInstance3D" parent="." node_paths=PackedStringArray("viewport")]
+transform = Transform3D(0.6, 0, 0, 0, -2.62268e-08, 0.6, 0, -0.6, -2.62268e-08, 0.19183, 0, -0.989967)
+mesh = SubResource("QuadMesh_ak4yq")
+script = ExtResource("3_ki7xb")
+viewport = NodePath("SubViewport")
+
+[node name="SubViewport" type="SubViewport" parent="Screen"]
+
+[node name="Control" parent="Screen/SubViewport" instance=ExtResource("3_pr73j")]
+
+[node name="OnOffDial" parent="." instance=ExtResource("5_vt8a0")]
+transform = Transform3D(-2.61303e-08, 0, 0.597791, 0, 1, 0, -0.597791, 0, -2.61303e-08, 0.392786, 0, -0.596603)
+DialTurns = 1
+ButtonTag = "onOff"
+
+[node name="StartButton" parent="." instance=ExtResource("2_63du8")]
+transform = Transform3D(-2.62268e-08, 7.8162e-16, 0.6, 1.78814e-08, 0.6, 0, -0.6, 1.78814e-08, -2.62268e-08, 0.0949581, 0, -0.598339)
+ButtonTag = "start"
+
+[editable path="Screen/SubViewport/Control"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=41 format=4 uid="uid://beepgbryoiiic"]
+[gd_scene load_steps=42 format=4 uid="uid://beepgbryoiiic"]
 
 [ext_resource type="Script" path="res://Buttons/Scripts/FacilityButton.cs" id="1_d3his"]
 [ext_resource type="PackedScene" uid="uid://bne16lmf4x5tr" path="res://Buttons/BigPressButton.tscn" id="2_o2fcm"]
 [ext_resource type="PackedScene" uid="uid://cai4w8ddf6v28" path="res://Buttons/DialButton.tscn" id="3_du6eh"]
 [ext_resource type="AudioStream" uid="uid://cat6qfk5qqvf5" path="res://Assets/Sounds/VHSBuzz.mp3" id="5_ocsek"]
 [ext_resource type="AudioStream" uid="uid://ecpg6fsei0v8" path="res://Assets/Sounds/FanNoise.mp3" id="6_4br3t"]
+[ext_resource type="PackedScene" uid="uid://bdxnghqmeu8sr" path="res://Puzzles/SimonSays.tscn" id="6_iywyb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s3qdt"]
 resource_name = "standardSurface1"
@@ -640,3 +641,7 @@ DialTurns = 1
 _targetDialIndex = 1
 DialFinalAngle = -70
 ButtonTag = "threeOfThree"
+
+[node name="SimonSaysButtons" parent="." node_paths=PackedStringArray("buttonList") instance=ExtResource("6_iywyb")]
+transform = Transform3D(-4.37114e-08, 0, -1, -0.626359, 0.779535, 2.7379e-08, 0.779535, 0.626359, -3.40745e-08, -1.2425, 0.910808, -3.12497)
+buttonList = [null, null, null, null, null, null, null, null, null, null]
