@@ -64,6 +64,9 @@ public partial class FacilityPressButton : FacilityButton
     {
         IsPressed = false;
         releaseBuffer = false;
-        StateChanged?.Invoke(ButtonTag);
+        //StateChanged?.Invoke(ButtonTag);
+        /* Noah here - with this called both here and on 
+         * pressed, it is calling CheckTaskList twice
+         */
     }
 }

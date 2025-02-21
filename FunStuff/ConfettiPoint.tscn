@@ -66,7 +66,7 @@ script = ExtResource("1_avnrn")
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 emitting = false
 amount = 800
-lifetime = 3.0
+lifetime = 2.68
 one_shot = true
 explosiveness = 0.95
 trail_lifetime = 0.2

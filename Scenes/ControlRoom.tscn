@@ -1,9 +1,8 @@
-[gd_scene load_steps=42 format=4 uid="uid://beepgbryoiiic"]
+[gd_scene load_steps=41 format=4 uid="uid://beepgbryoiiic"]
 
 [ext_resource type="Script" path="res://Buttons/Scripts/FacilityButton.cs" id="1_d3his"]
 [ext_resource type="PackedScene" uid="uid://bne16lmf4x5tr" path="res://Buttons/BigPressButton.tscn" id="2_o2fcm"]
 [ext_resource type="PackedScene" uid="uid://cai4w8ddf6v28" path="res://Buttons/DialButton.tscn" id="3_du6eh"]
-[ext_resource type="PackedScene" uid="uid://b7q7u1a8mmjsk" path="res://FunStuff/ConfettiPoint.tscn" id="4_p0xxv"]
 [ext_resource type="AudioStream" uid="uid://cat6qfk5qqvf5" path="res://Assets/Sounds/VHSBuzz.mp3" id="5_ocsek"]
 [ext_resource type="AudioStream" uid="uid://ecpg6fsei0v8" path="res://Assets/Sounds/FanNoise.mp3" id="6_4br3t"]
 
@@ -594,9 +593,6 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 
-[node name="ConfettiPoint" parent="." instance=ExtResource("4_p0xxv")]
-transform = Transform3D(1, 0, 0, 0, 0.871668, 0.490098, 0, -0.490098, 0.871668, 0, 1.08021, 3.55208)
-
 [node name="MonitorAmbient" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.29998, 1.4341, -2.91958)
 stream = ExtResource("5_ocsek")
@@ -608,3 +604,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000819117, 3.807, 0.0034641
 stream = ExtResource("6_4br3t")
 volume_db = -33.0
 autoplay = true
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(-4.77405e-08, 2.6791e-08, -1.38223, 0.847179, 0.790155, 0, 1.09218, -0.612907, -6.04192e-08, -0.533982, 0.766342, 2.95921)
+
+[node name="BigPressButton_null" parent="Node3D" instance=ExtResource("2_o2fcm")]
+transform = Transform3D(0.723468, 0, 3.55271e-15, -8.9407e-08, 1, 3.55271e-15, -5.32907e-15, 3.55271e-15, 0.723468, -0.203574, -3.57628e-07, 0.0746869)
+skeleton = NodePath("../../Control_Room_Blockout_1")
+ButtonTag = "asd"
+
+[node name="BigPressButton_confetti" parent="Node3D" instance=ExtResource("2_o2fcm")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 3.55271e-15, 0, 1.77636e-15, 1, 0.127447, -7.45058e-09, 8.88178e-16)
+skeleton = NodePath("../../Control_Room_Blockout_1")
+ButtonTag = "confetti"
+
+[node name="DialButton_BigThree_2" parent="Node3D" instance=ExtResource("3_du6eh")]
+transform = Transform3D(0.723468, 0, 1.77636e-15, -5.96046e-08, 1, 1.77636e-15, -3.55271e-15, 1.77636e-15, 0.723468, -0.199981, 0.00281858, 0.235925)
+DialTurns = 2
+_targetDialIndex = 0
+DialStartingAngle = -70
+DialFinalAngle = 140
+ButtonTag = "twoOfThree"
+
+[node name="DialButton_BigThree_1" parent="Node3D" instance=ExtResource("3_du6eh")]
+transform = Transform3D(0.723468, 0, 1.77636e-15, -5.96046e-08, 1, 1.77636e-15, -3.55271e-15, 1.77636e-15, 0.723468, -0.199981, 0.00281858, 0.394431)
+DialTurns = 4
+_targetDialIndex = 4
+DialStartingAngle = 70
+DialFinalAngle = -140
+ButtonTag = "oneOfThree"
+
+[node name="DialButton_BigThree_3" parent="Node3D" instance=ExtResource("3_du6eh")]
+transform = Transform3D(0.723468, 0, 1.77636e-15, -5.96046e-08, 1, 1.77636e-15, -3.55271e-15, 1.77636e-15, 0.723468, -0.199981, 0.00281858, 0.553662)
+DialTurns = 1
+_targetDialIndex = 1
+DialFinalAngle = -70
+ButtonTag = "threeOfThree"

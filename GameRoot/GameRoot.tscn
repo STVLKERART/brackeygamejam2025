@@ -1,12 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://gqkdkyfar0nj"]
+[gd_scene load_steps=8 format=3 uid="uid://ps545sv2ie8p"]
 
 [ext_resource type="PackedScene" uid="uid://bqrem1yq8jafm" path="res://Player/Player.tscn" id="1_tp3tb"]
 [ext_resource type="Script" path="res://GameRoot/GameRoot.cs" id="1_x4odi"]
 [ext_resource type="PackedScene" uid="uid://beepgbryoiiic" path="res://Scenes/ControlRoom.tscn" id="3_7fc4i"]
 [ext_resource type="Script" path="res://GameRoot/MeltdownProgress.cs" id="5_wdboo"]
+[ext_resource type="PackedScene" uid="uid://b7q7u1a8mmjsk" path="res://FunStuff/ConfettiPoint.tscn" id="6_3rl10"]
 [ext_resource type="PackedScene" uid="uid://ct3de2np8y4ql" path="res://CountdownMonitor/CountdownMonitor.tscn" id="6_km1ce"]
 [ext_resource type="PackedScene" uid="uid://ccfora3y5pnfb" path="res://Debug/DebugCanvas.tscn" id="7_eg5tq"]
-[ext_resource type="PackedScene" uid="uid://epuri8hjaywa" path="res://Manual/InstructionManual.tscn" id="9_dfh82"]
 
 [node name="GameRoot" type="Node" node_paths=PackedStringArray("_meltdownProgress")]
 script = ExtResource("1_x4odi")
@@ -18,15 +18,35 @@ _speed = 3.0
 
 [node name="ControlRoom" parent="." instance=ExtResource("3_7fc4i")]
 
-[node name="MeltdownProgress" type="Node" parent="." node_paths=PackedStringArray("_countdownMonitor")]
+[node name="MeltdownProgress" type="Node" parent="." node_paths=PackedStringArray("_countdownMonitor", "_confettiNode")]
 script = ExtResource("5_wdboo")
 _countdownMonitor = NodePath("../CountdownMonitor")
-TaskList = Array[String](["asd"])
+_confettiNode = NodePath("../ConfettiPoint")
+TaskList = Array[String](["asd", "theBigThree"])
 
 [node name="CountdownMonitor" parent="." instance=ExtResource("6_km1ce")]
 transform = Transform3D(-0.707106, -0.183013, -0.683013, 0, 0.965926, -0.258819, 0.707106, -0.183013, -0.683013, 2.81, 2.8, 2.8)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("7_eg5tq")]
 
-[node name="InstructionManual" parent="." instance=ExtResource("9_dfh82")]
-transform = Transform3D(-0.250702, 0, 0.164768, 0, 0.3, 0, -0.164768, 0, -0.250702, -2.54454, 1.18454, 2.45166)
+[node name="TESTING_PURPOSES_ONLY" type="Node3D" parent="."]
+
+[node name="Label3D_theBigThree" type="Label3D" parent="TESTING_PURPOSES_ONLY"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.953085, 0.753944, 2.78145)
+text = "This is \"theBigThree\" Task in the Task List.
+To complete it: Turn all dials to -70 // NE"
+font_size = 11
+outline_size = 5
+
+[node name="Label3D_theBigThree2" type="Label3D" parent="TESTING_PURPOSES_ONLY"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.953085, 0.460854, 2.51174)
+text = "Notice that in the log the buttons 
+continue to call all their shit
+ after completing their tasks.
+A non-issue in reality but likely important 
+to bear in mind!"
+font_size = 8
+outline_size = 3
+
+[node name="ConfettiPoint" parent="." instance=ExtResource("6_3rl10")]
+transform = Transform3D(0.62347, 0.234897, 0.745727, -0.368476, 0.929512, 0.0152794, -0.689572, -0.284309, 0.666077, -3.58241, 0.0260921, 3.72452)
