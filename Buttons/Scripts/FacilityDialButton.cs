@@ -21,7 +21,7 @@ public partial class FacilityDialButton : FacilityButton
     [Export] int DialFinalAngle = 90; // The last index, the dial will look at this angle // DO NOT SET TO ZERO and probably dont set to higher than 360
     [Export] float DialTurnTime = 0.3f;
     float currentAngle;
-
+    [Export] bool _sendSignalOnlyOnIndexMatch = true;
     [Export] MeshInstance3D _dialTop;
     public float DialTurnIndex { get; private set; }
     public override void _Ready()
@@ -71,11 +71,12 @@ public partial class FacilityDialButton : FacilityButton
     private void OnTweenFinished()
     {
         isAnimating = false;
-        GD.Print("Tween Finished");
-        if (DialTurnIndex == _targetDialIndex)
+        
+        if (DialTurnIndex == _targetDialIndex || !_sendSignalOnlyOnIndexMatch)
         {
             GD.Print("Dial Turned to Target Index");
             StateChanged?.Invoke(ButtonTag);
         }
+
     }
 }

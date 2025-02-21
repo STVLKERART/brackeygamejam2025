@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://de50jnu5agv5p"]
+[gd_scene load_steps=4 format=3 uid="uid://de50jnu5agv5p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k7fn0"]
+bg_color = Color(0.197937, 0.197937, 0.197937, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ok6to"]
-bg_color = Color(0.753984, 0.753984, 0.753984, 1)
+bg_color = Color(0.393086, 0.393085, 0.393085, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vi73o"]
-bg_color = Color(0.0605303, 0.0605304, 0.0605303, 1)
+bg_color = Color(0.169245, 0.169245, 0.169245, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -14,73 +17,77 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k7fn0")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 40
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
 columns = 3
 
-[node name="FlashBox0" type="Panel" parent="MarginContainer/GridContainer"]
+[node name="FlashBox0" type="Panel" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_ok6to")
 
-[node name="FlashBox1" type="Panel" parent="MarginContainer/GridContainer"]
+[node name="FlashBox1" type="Panel" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_ok6to")
 
-[node name="FlashBox2" type="Panel" parent="MarginContainer/GridContainer"]
+[node name="FlashBox2" type="Panel" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_ok6to")
 
-[node name="FlashBox3" type="Panel" parent="MarginContainer/GridContainer"]
+[node name="FlashBox3" type="Panel" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_ok6to")
 
-[node name="FlashBox4" type="Panel" parent="MarginContainer/GridContainer"]
+[node name="FlashBox4" type="Panel" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_ok6to")
 
-[node name="FlashBox5" type="Panel" parent="MarginContainer/GridContainer"]
+[node name="FlashBox5" type="Panel" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_ok6to")
 
-[node name="FlashBox6" type="Panel" parent="MarginContainer/GridContainer"]
+[node name="FlashBox6" type="Panel" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_ok6to")
 
-[node name="FlashBox7" type="Panel" parent="MarginContainer/GridContainer"]
+[node name="FlashBox7" type="Panel" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_ok6to")
 
-[node name="FlashBox8" type="Panel" parent="MarginContainer/GridContainer"]
+[node name="FlashBox8" type="Panel" parent="PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

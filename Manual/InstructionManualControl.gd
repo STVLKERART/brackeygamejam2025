@@ -32,11 +32,11 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
-func _unhandled_input(event):
+func _unhandled_input(_event):
 	if Input.is_action_just_pressed("left"):
 		if not rotating and current_page + 1 < T_pages.size():
 			start_fwd_rotation(rotation_time)

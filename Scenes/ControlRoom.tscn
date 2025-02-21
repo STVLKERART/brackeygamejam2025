@@ -642,6 +642,5 @@ _targetDialIndex = 1
 DialFinalAngle = -70
 ButtonTag = "threeOfThree"
 
-[node name="SimonSaysButtons" parent="." node_paths=PackedStringArray("buttonList") instance=ExtResource("6_iywyb")]
+[node name="SimonSaysButtons" parent="." instance=ExtResource("6_iywyb")]
 transform = Transform3D(-4.37114e-08, 0, -1, -0.626359, 0.779535, 2.7379e-08, 0.779535, 0.626359, -3.40745e-08, -1.2425, 0.910808, -3.12497)
-buttonList = [null, null, null, null, null, null, null, null, null, null]
