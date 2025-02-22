@@ -66,6 +66,7 @@ Character = NodePath("../../../../../../..")
 
 [node name="InstructionManual" parent="Neck/DummyCamera/CanvasLayer/SubViewportContainer/SubViewport/NoClipCamera/ManualHolder" instance=ExtResource("5_ql56e")]
 transform = Transform3D(0.939693, 0, 0.34202, 0, 1, 0, -0.34202, 0, 0.939693, 0, 0, -0.965)
+visible = false
 delete_collider = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
