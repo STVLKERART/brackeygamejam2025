@@ -349,6 +349,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.7703, 0)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="FanFull"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.992707, 0)
+layers = 3
 light_color = Color(0.819547, 0.571342, 0.383597, 1)
 light_energy = 1.4
 shadow_enabled = true

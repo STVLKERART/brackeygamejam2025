@@ -22,11 +22,9 @@ surface_material_override/0 = ExtResource("2_rfeyp")
 
 [node name="Mesh_PageL" parent="Book" instance=ExtResource("4_d8ypx")]
 transform = Transform3D(0.943063, 0, 0, 0, -4.37114e-08, -1.43121, 0, 1, -6.25602e-08, -0.960644, 3.68367e-10, 0.035527)
-layers = 2
 
 [node name="Mesh_PageR" parent="Book" instance=ExtResource("4_d8ypx")]
 transform = Transform3D(0.722238, -0.643028, 4.01393e-08, -7.62604e-11, -4.37113e-08, -1.43121, 0.606416, 0.765842, -4.79856e-08, 0.707983, -6.29444e-11, 0.643278)
-layers = 2
 
 [node name="Pivot" parent="Book" instance=ExtResource("5_14oid")]
 
