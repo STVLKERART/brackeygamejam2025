@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ps545sv2ie8p"]
+[gd_scene load_steps=9 format=3 uid="uid://ps545sv2ie8p"]
 
 [ext_resource type="PackedScene" uid="uid://bqrem1yq8jafm" path="res://Player/Player.tscn" id="1_tp3tb"]
 [ext_resource type="Script" path="res://GameRoot/GameRoot.cs" id="1_x4odi"]
@@ -8,26 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://ct3de2np8y4ql" path="res://CountdownMonitor/CountdownMonitor.tscn" id="6_km1ce"]
 [ext_resource type="PackedScene" uid="uid://ccfora3y5pnfb" path="res://Debug/DebugCanvas.tscn" id="7_eg5tq"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vbsn3"]
-sky_top_color = Color(0, 0, 0, 1)
-sky_horizon_color = Color(0.55, 0.54225, 0.53325, 1)
-ground_horizon_color = Color(0.55, 0.54225, 0.53325, 1)
-
-[sub_resource type="Sky" id="Sky_lvhsb"]
-sky_material = SubResource("ProceduralSkyMaterial_vbsn3")
-
-[sub_resource type="Environment" id="Environment_hinl8"]
-background_mode = 2
-sky = SubResource("Sky_lvhsb")
-tonemap_mode = 2
-glow_enabled = true
+[sub_resource type="Environment" id="Environment_h07uw"]
 
 [node name="GameRoot" type="Node" node_paths=PackedStringArray("_meltdownProgress")]
 script = ExtResource("1_x4odi")
 _meltdownProgress = NodePath("MeltdownProgress")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_hinl8")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_tp3tb")]
 transform = Transform3D(-3.93403e-08, 0, -0.9, 0, 0.9, 0, 0.9, 0, -3.93403e-08, 0, 0, 0)
@@ -75,3 +60,6 @@ transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -
 layers = 3
 shadow_enabled = true
 sky_mode = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+environment = SubResource("Environment_h07uw")

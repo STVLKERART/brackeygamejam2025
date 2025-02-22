@@ -9,5 +9,6 @@ public partial class FanFull : Node3D
 	public override void _Ready()
 	{
 		anim.Play();
+		GD.Print("gad");
 	}
 }
