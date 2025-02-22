@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq0bc8amdorp2"]
+
+[ext_resource type="PackedScene" uid="uid://c1kjvlbw6xhmh" path="res://Assets/Objects-Meshes/Fan/Ceiling_Fan_Blades.fbx" id="1_x33po"]
+[ext_resource type="Material" uid="uid://kld74ejjmk6v" path="res://Assets/Objects-Meshes/Fan/MFan.tres" id="2_jat0j"]
+
+[node name="Ceiling_Fan_Blades" instance=ExtResource("1_x33po")]
+
+[node name="Ceiling_Fan_Blades" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_jat0j")

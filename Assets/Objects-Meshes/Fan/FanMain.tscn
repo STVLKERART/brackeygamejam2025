@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bousp14tvsim5"]
+
+[ext_resource type="PackedScene" uid="uid://4cqwmjalm01h" path="res://Assets/Objects-Meshes/Fan/Ceiling_Fan_Main.fbx" id="1_sfcw2"]
+[ext_resource type="Material" uid="uid://kld74ejjmk6v" path="res://Assets/Objects-Meshes/Fan/MFan.tres" id="2_wm3ml"]
+
+[node name="Ceiling_Fan_Main" instance=ExtResource("1_sfcw2")]
+
+[node name="Ceiling_Fan_Main" parent="." index="0"]
+material_override = ExtResource("2_wm3ml")
