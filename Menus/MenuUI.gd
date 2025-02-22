@@ -1,6 +1,6 @@
 extends Control
 
-@onready var anim: AnimationPlayer = $"../AnimationPlayer"
+@onready var anim: AnimationPlayer = $MarginContainer/AnimationPlayer
 
 func _on_start_button_pressed() -> void:
 	print("press")
