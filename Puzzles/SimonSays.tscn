@@ -64,7 +64,7 @@ viewport = NodePath("SubViewport")
 FlashPanels = [NodePath("SubViewport/Control/PanelContainer/MarginContainer/GridContainer/FlashBox0"), NodePath("SubViewport/Control/PanelContainer/MarginContainer/GridContainer/FlashBox1"), NodePath("SubViewport/Control/PanelContainer/MarginContainer/GridContainer/FlashBox2"), NodePath("SubViewport/Control/PanelContainer/MarginContainer/GridContainer/FlashBox3"), NodePath("SubViewport/Control/PanelContainer/MarginContainer/GridContainer/FlashBox4"), NodePath("SubViewport/Control/PanelContainer/MarginContainer/GridContainer/FlashBox5"), NodePath("SubViewport/Control/PanelContainer/MarginContainer/GridContainer/FlashBox6"), NodePath("SubViewport/Control/PanelContainer/MarginContainer/GridContainer/FlashBox7"), NodePath("SubViewport/Control/PanelContainer/MarginContainer/GridContainer/FlashBox8")]
 ScreenOffPanel = NodePath("SubViewport/Control/Panel")
 FlashColour = Color(1, 1, 1, 1)
-IdleColour = Color(0.670689, 0.67069, 0.670689, 1)
+IdleColour = Color(0.446776, 0.446777, 0.446776, 1)
 
 [node name="SubViewport" type="SubViewport" parent="Screen"]
 

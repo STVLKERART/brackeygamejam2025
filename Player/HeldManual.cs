@@ -3,6 +3,7 @@ using System;
 
 public partial class HeldManual : Node3D
 {
+    [Export] Node3D PointerMesh;    
     [Export] Node3D ManualNode;
     [Export] PlayerCharacter Character;
     Vector2 MouseMotion;    
@@ -16,6 +17,7 @@ public partial class HeldManual : Node3D
             ManualNode.Visible = !ManualNode.Visible;
             ManualNode.SetProcessUnhandledInput(ManualNode.Visible);
             Character.DisableMovement(ManualNode.Visible);
+            PointerMesh.Visible = !ManualNode.Visible;
         }
 
         if (@event is InputEventMouseMotion motion)

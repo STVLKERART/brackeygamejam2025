@@ -25,7 +25,7 @@ public partial class SimonSaysScreen : MeshInstance3D
     {
         ScreenOffPanel.Visible = !ScreenOffPanel.Visible;
         var mat = GetActiveMaterial(0) as StandardMaterial3D;
-        //mat.EmissionEnabled = !ScreenOffPanel.Visible;
+        mat.ShadingMode = (!ScreenOffPanel.Visible ? BaseMaterial3D.ShadingModeEnum.Unshaded : BaseMaterial3D.ShadingModeEnum.PerPixel);
         return ScreenOffPanel.Visible;
 
     }

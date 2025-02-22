@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dt34owgp0uswm"
-path="res://.godot/imported/Pointer_Test.fbx-c1ef63d5588c1dd913f0e03b1eb84d19.scn"
+path="res://.godot/imported/Pointer_Test.fbx-ba4e9d9fd886138ff6e3b69e7c403b26.scn"
 
 [deps]
 
-source_file="res://Assets/Objects-Meshes/Pointer_Test.fbx"
-dest_files=["res://.godot/imported/Pointer_Test.fbx-c1ef63d5588c1dd913f0e03b1eb84d19.scn"]
+source_file="res://Assets/Objects-Meshes/Pointer/Pointer_Test.fbx"
+dest_files=["res://.godot/imported/Pointer_Test.fbx-ba4e9d9fd886138ff6e3b69e7c403b26.scn"]
 
 [params]
 
