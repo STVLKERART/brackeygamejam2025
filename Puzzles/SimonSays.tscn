@@ -57,13 +57,12 @@ transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0.4, 0, 
 ButtonTag = "ss9"
 
 [node name="Screen" type="MeshInstance3D" parent="." node_paths=PackedStringArray("viewport", "FlashPanels", "ScreenOffPanel")]
-transform = Transform3D(-2.09815e-08, -0.48, -2.09815e-08, 0, -2.09815e-08, 0.48, -0.48, 2.09815e-08, 9.17129e-16, 0.19183, 0, -0.989967)
+transform = Transform3D(-2.09815e-08, -0.48, -2.09815e-08, 0, -2.09815e-08, 0.48, -0.48, 2.09815e-08, 9.17129e-16, 0.19183, 0.0518404, -0.989967)
 mesh = SubResource("QuadMesh_ak4yq")
 script = ExtResource("3_ki7xb")
 viewport = NodePath("SubViewport")
 FlashPanels = [NodePath("SubViewport/Control/PanelContainer/MarginContainer/GridContainer/FlashBox0"), NodePath("SubViewport/Control/PanelContainer/MarginContainer/GridContainer/FlashBox1"), NodePath("SubViewport/Control/PanelContainer/MarginContainer/GridContainer/FlashBox2"), NodePath("SubViewport/Control/PanelContainer/MarginContainer/GridContainer/FlashBox3"), NodePath("SubViewport/Control/PanelContainer/MarginContainer/GridContainer/FlashBox4"), NodePath("SubViewport/Control/PanelContainer/MarginContainer/GridContainer/FlashBox5"), NodePath("SubViewport/Control/PanelContainer/MarginContainer/GridContainer/FlashBox6"), NodePath("SubViewport/Control/PanelContainer/MarginContainer/GridContainer/FlashBox7"), NodePath("SubViewport/Control/PanelContainer/MarginContainer/GridContainer/FlashBox8")]
 ScreenOffPanel = NodePath("SubViewport/Control/Panel")
-FlashColour = Color(1, 1, 1, 1)
 IdleColour = Color(0.446776, 0.446777, 0.446776, 1)
 
 [node name="SubViewport" type="SubViewport" parent="Screen"]
@@ -78,6 +77,7 @@ transform = Transform3D(-0.597791, 0, -5.22606e-08, 0, 1, 0, 5.22606e-08, 0, -0.
 DialTurns = 1
 DialStartingIndex = 1
 _sendSignalOnlyOnIndexMatch = false
+ButtonTopColour = Color(0.885632, 0.691411, 0.412306, 1)
 ButtonTag = "onOff"
 
 [node name="StartButton" parent="." instance=ExtResource("2_63du8")]

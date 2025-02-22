@@ -29,7 +29,10 @@ public partial class GameRoot : Node
     {
         _staticMeltdownProgress.AddFacilityButton(button);
     }
-
+    public static void AddSimonSays(SimonSays simonSays)
+    {
+        _staticMeltdownProgress.AddSimonSays(simonSays);
+    }
     public static void GameOver()
     {
         GD.Print("Game Over!!");

@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dpab6weqtchi0" path="res://Assets/Objects-Meshes/Buttons/Buttons_Roughness.png" id="5_jthiu"]
 
 [resource]
+resource_local_to_scene = true
 albedo_color = Color(0.931066, 0.47081, 0.343146, 1)
 albedo_texture = ExtResource("1_rvgbi")
 metallic_texture = ExtResource("3_qhi27")

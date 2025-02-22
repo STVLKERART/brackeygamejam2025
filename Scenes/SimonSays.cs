@@ -10,19 +10,26 @@ public partial class SimonSays : Node3D
     [Export] FacilityDialButton TurnOnScreenDial;
     [Export] public string TaskTag = "simonSays";
     [Export] SimonSaysScreen screen;
+    [Export] Color FlashColour = new("c0c0c0");
+    [Export] Color WinColor = Colors.Green;
+    [Export] Color LoseColor = Colors.Red;
 
     [Export] int rounds = 5;
     [Export] int startingSequenceValue = 3;
 
     private List<int> sequence = new List<int>();
-    bool playerTurn = false;
+    bool playerTurn = true;
     int currentStep = 0;
     int currentRound = 0;
     int playbackStep = 0;
-    bool screenIsOn;
+    bool screenIsOn = false;
+    public Action<string> GameWon;
+
 
     public override void _Ready()
     {
+        GameRoot.AddSimonSays(this);
+
         for (int i = 0; i <= 8; i++)
         {
             var button = (FacilityButton)GetChild(i);
@@ -30,12 +37,12 @@ public partial class SimonSays : Node3D
             button.StateChanged += PlayRound;
         }
         PlayButton.StateChanged += StartGame;
-        TurnOnScreenDial.StateChanged += (s) => { screenIsOn = screen.ToggleScreen(); };
+        TurnOnScreenDial.StateChanged += (s) => { screenIsOn = !screen.ToggleScreen(); };
         screen.RequestNextInSequence += PlaySequenceOnScreen;
     }
     private void StartGame(string buttonTag)
     {
-        if (playerTurn && screenIsOn) return;
+        if (!playerTurn || !screenIsOn) return;
         sequence.Clear();
         playbackStep = 0;
         currentStep = 0;
@@ -46,7 +53,7 @@ public partial class SimonSays : Node3D
             sequence.Add(random.Next(0, buttonList.Count));
             GD.Print(sequence[i]);
         }
-        
+
         PlaySequenceOnScreen();
     }
 
@@ -74,7 +81,10 @@ public partial class SimonSays : Node3D
                 currentStep = 0;
                 currentRound++;
                 if (currentRound >= rounds)
+                {
                     WinGame();
+                    return;
+                }
                 sequence.Add(new Random().Next(0, buttonList.Count)); // Add a new step
                 PlaySequenceOnScreen();                                         // Play the updated sequence on screen!
             }
@@ -85,28 +95,44 @@ public partial class SimonSays : Node3D
 
     private void WinGame()
     {
-        // on win go green
+        sequence.Clear();
+        playbackStep = 0;
+        currentStep = 0;
+        currentRound = 0; 
+        playbackStep = 0;
+
+        for (int i = 0; i < 9; i++)
+            screen.FlashBox(i, WinColor, 1f);
+        GameWon?.Invoke(TaskTag);
         GD.Print("WIN!!");
     }
 
     private void PlaySequenceOnScreen()
     {
-        screen.FlashBox(-1, 0.2f);
+        screen.FlashBox(-1, FlashColour, 0.2f);
         if (playbackStep <= sequence.Count - 1)
         {
-            screen.FlashBox(sequence[playbackStep], 1f);
+            screen.FlashBox(sequence[playbackStep], FlashColour, 1f);
             playbackStep++;
         }
-        else {
+        else
+        {
             GD.Print("playerTurn");
             playbackStep = 0;
-            playerTurn = true; 
+            playerTurn = true;
         }
     }
 
     private void GameOver()
     {
-        // on game over, stop player from playing and go red mode!!
+        sequence.Clear();
+        playbackStep = 0;
+        currentStep = 0;
+        currentRound = 0;
+        playbackStep = 0;
+
+        for (int i = 0; i < 9; i++)
+            screen.FlashBox(i, LoseColor, 1f);
         GD.Print("Game Over!");
     }
 

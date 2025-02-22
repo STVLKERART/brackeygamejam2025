@@ -14,7 +14,7 @@ _firstPersonCamera = NodePath("Neck/DummyCamera")
 _head = NodePath("Neck")
 
 [node name="Neck" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.33037, -0.2)
 
 [node name="DummyCamera" type="Camera3D" parent="Neck"]
 cull_mask = 1048573
@@ -29,7 +29,7 @@ remote_path = NodePath("../CanvasLayer/SubViewportContainer/SubViewport/NoClipCa
 [node name="CanvasLayer" type="CanvasLayer" parent="Neck/DummyCamera"]
 
 [node name="ActualCamera" type="Camera3D" parent="Neck/DummyCamera/CanvasLayer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.33037, -0.2)
 cull_mask = 1048573
 current = true
 
@@ -51,7 +51,7 @@ size = Vector2i(1440, 810)
 render_target_update_mode = 4
 
 [node name="NoClipCamera" type="Camera3D" parent="Neck/DummyCamera/CanvasLayer/SubViewportContainer/SubViewport"]
-transform = Transform3D(1, -1.49012e-08, -2.77556e-17, 1.49012e-08, 1, 1.86265e-09, 0, -1.86265e-09, 1, 0, 1.5, -0.2)
+transform = Transform3D(1, -1.49012e-08, -2.77556e-17, 1.49012e-08, 1, 1.86265e-09, 0, -1.86265e-09, 1, 0, 1.33037, -0.2)
 cull_mask = 2
 current = true
 

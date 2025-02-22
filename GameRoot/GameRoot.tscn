@@ -36,7 +36,7 @@ _speed = 3.0
 script = ExtResource("5_wdboo")
 _countdownMonitor = NodePath("../CountdownMonitor")
 _confettiNode = NodePath("../ConfettiPoint")
-TaskList = Array[String](["asd", "theBigThree"])
+TaskList = Array[String](["asd", "theBigThree", "simonSays"])
 
 [node name="CountdownMonitor" parent="." instance=ExtResource("6_km1ce")]
 transform = Transform3D(-0.707106, -0.183013, -0.683013, 0, 0.965926, -0.258819, 0.707106, -0.183013, -0.683013, 2.81, 2.8, 2.8)

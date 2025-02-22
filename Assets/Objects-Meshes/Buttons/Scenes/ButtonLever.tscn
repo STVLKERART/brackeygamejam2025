@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvgllkjnksg82"]
+
+[ext_resource type="PackedScene" uid="uid://n25tgwiknpph" path="res://Assets/Objects-Meshes/Buttons/Meshes/Lever_1_Bottom.fbx" id="1_dx45w"]
+[ext_resource type="Material" uid="uid://cl0m33fyosvdw" path="res://Assets/Objects-Meshes/Buttons/MButtonsBase.tres" id="2_613wy"]
+[ext_resource type="Material" uid="uid://dsxxj5p4j5l5u" path="res://Assets/Objects-Meshes/Buttons/MButtonsTop.tres" id="3_yksf8"]
+
+[node name="Lever_1_Bottom" instance=ExtResource("1_dx45w")]
+
+[node name="Lever_1_Bottom" parent="Test_Buttons_3" index="0"]
+material_override = ExtResource("2_613wy")
+
+[node name="Lever_1_Top" parent="Test_Buttons_3/Lever_1_Bottom" index="0"]
+material_override = ExtResource("3_yksf8")

@@ -47,12 +47,17 @@ public partial class MeltdownProgress : Node
     public void AddFacilityButton(FacilityButton button)
     {
         buttonList.Add(button.ButtonTag, button);
-        if (button.ButtonTag != "")
-            RadDebug.SetItem(button.ButtonTag, ""); // add an item
+        if (button.ButtonTag != "") { }
+        //RadDebug.SetItem(button.ButtonTag, ""); // add an item
         else
             GD.Print("Button has no tag"); // j- we might not care that a button has no tag, it can be a dead button
         button.StateChanged += CheckTaskList;
 
+    }
+
+    public void AddSimonSays(SimonSays simonSays)
+    {
+        simonSays.GameWon += CheckTaskList;
     }
 
     /* Noah here - in my testing with prints to log, it seems weird that buttons that have been removed still

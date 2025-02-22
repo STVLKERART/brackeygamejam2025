@@ -7,8 +7,6 @@ public partial class SimonSaysScreen : MeshInstance3D
     [Export] SubViewport viewport;
     [Export] Array<Panel> FlashPanels;
     [Export] Panel ScreenOffPanel;
-
-    [Export] Color FlashColour = new("c0c0c0");
     [Export] Color IdleColour = new("333333");
     public Action RequestNextInSequence;
     public override void _Ready()
@@ -30,7 +28,7 @@ public partial class SimonSaysScreen : MeshInstance3D
 
     }
 
-    public void FlashBox(int index, float duration, float delay = .2f)
+    public void FlashBox(int index, Color color, float duration, float delay = .2f)
     {
 
         var timer1 = new Timer();
@@ -43,7 +41,7 @@ public partial class SimonSaysScreen : MeshInstance3D
         {
             timer1.QueueFree();
 
-            FlashPanels[index].Modulate = FlashColour;
+            FlashPanels[index].Modulate = color;
             var timer = new Timer();
             timer.WaitTime = duration;
             AddChild(timer);
