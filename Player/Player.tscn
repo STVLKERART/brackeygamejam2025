@@ -55,7 +55,7 @@ cull_mask = 2
 current = true
 
 [node name="Pointer" parent="Neck/DummyCamera/CanvasLayer/SubViewportContainer/SubViewport/NoClipCamera" instance=ExtResource("2_51rtb")]
-transform = Transform3D(-0.107311, -0.211168, 0.971541, 0.0814807, 0.972029, 0.220274, -0.990881, 0.1028, -0.0871035, 0.439751, -0.28171, -0.247905)
+transform = Transform3D(-0.0431983, -0.224257, 0.920517, 0.0328003, 1.03228, 0.208706, -0.398882, 0.109172, -0.0825289, 0.439751, -0.28171, -0.396986)
 
 [node name="ManualHolder" type="Node3D" parent="Neck/DummyCamera/CanvasLayer/SubViewportContainer/SubViewport/NoClipCamera" node_paths=PackedStringArray("PointerMesh", "ManualNode", "Character")]
 transform = Transform3D(1, 1.49012e-08, 0, -1.49012e-08, 1, -1.86265e-09, -2.77556e-17, 1.86265e-09, 1, -2.98023e-08, 1.19209e-07, 1.49012e-08)
