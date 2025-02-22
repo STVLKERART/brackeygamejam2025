@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://csrs1d06ux8it"]
+
+[ext_resource type="PackedScene" uid="uid://cjy6b3ajjlqr3" path="res://Assets/Objects-Meshes/ControlPanel/ControlPanel/Control_Panel.fbx" id="1_4dqmk"]
+[ext_resource type="Material" uid="uid://dnw06aujaje50" path="res://Assets/Objects-Meshes/ControlPanel/ControlPanel/MControlPanel.tres" id="2_bth0i"]
+
+[node name="Control_Panel" instance=ExtResource("1_4dqmk")]
+
+[node name="Control_Panel_LP" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_bth0i")

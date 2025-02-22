@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdxnghqmeu8sr"]
+[gd_scene load_steps=8 format=3 uid="uid://bdxnghqmeu8sr"]
 
 [ext_resource type="Script" path="res://Scenes/SimonSays.cs" id="1_c5jqu"]
 [ext_resource type="PackedScene" uid="uid://bne16lmf4x5tr" path="res://Buttons/BigPressButton.tscn" id="2_63du8"]
@@ -6,12 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://de50jnu5agv5p" path="res://Puzzles/SimonSaysScreen.tscn" id="3_pr73j"]
 [ext_resource type="PackedScene" uid="uid://cai4w8ddf6v28" path="res://Buttons/DialButton.tscn" id="5_vt8a0"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_gtrwp"]
-viewport_path = NodePath("Screen/SubViewport")
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_23vm2"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_gtrwp")
 emission = Color(0.0214346, 0.0214346, 0.0214346, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_ak4yq"]
@@ -61,7 +57,7 @@ transform = Transform3D(1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0.4, 0, 
 ButtonTag = "ss9"
 
 [node name="Screen" type="MeshInstance3D" parent="." node_paths=PackedStringArray("viewport", "FlashPanels", "ScreenOffPanel")]
-transform = Transform3D(-2.62268e-08, -0.6, -2.62268e-08, 0, -2.62268e-08, 0.6, -0.6, 2.62268e-08, 1.14641e-15, 0.19183, 0, -0.989967)
+transform = Transform3D(-2.09815e-08, -0.48, -2.09815e-08, 0, -2.09815e-08, 0.48, -0.48, 2.09815e-08, 9.17129e-16, 0.19183, 0, -0.989967)
 mesh = SubResource("QuadMesh_ak4yq")
 script = ExtResource("3_ki7xb")
 viewport = NodePath("SubViewport")

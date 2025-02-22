@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c50jqw00qql1i"]
+
+[ext_resource type="PackedScene" uid="uid://de25djwhf8in4" path="res://Assets/Objects-Meshes/ControlPanel/ControlPanelBottom/Control_Panel_Bottom.fbx" id="1_uh0pk"]
+[ext_resource type="Material" uid="uid://d2hc64dsr8tyw" path="res://Assets/Objects-Meshes/ControlPanel/ControlPanelBottom/MControlPanelBottom.tres" id="2_gd1t3"]
+
+[node name="Control_Panel_Bottom" instance=ExtResource("1_uh0pk")]
+
+[node name="Control_Panel_Bottom" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_gd1t3")

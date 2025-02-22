@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://cl0m33fyosvdw"]
+
+[ext_resource type="Texture2D" uid="uid://bl2wmy206irnc" path="res://Assets/Objects-Meshes/Buttons/Buttons_BaseColor.png" id="1_q2buh"]
+[ext_resource type="Texture2D" uid="uid://d1ahgpbf3jkhp" path="res://Assets/Objects-Meshes/Buttons/Buttons_Height.png" id="2_1o8jc"]
+[ext_resource type="Texture2D" uid="uid://cgdx3b40ktl1q" path="res://Assets/Objects-Meshes/Buttons/Buttons_Metallic.png" id="3_odi6o"]
+[ext_resource type="Texture2D" uid="uid://2bfninrhji0n" path="res://Assets/Objects-Meshes/Buttons/Buttons_Normal.png" id="4_p6vs0"]
+[ext_resource type="Texture2D" uid="uid://dpab6weqtchi0" path="res://Assets/Objects-Meshes/Buttons/Buttons_Roughness.png" id="5_g7f2m"]
+
+[resource]
+resource_local_to_scene = true
+albedo_texture = ExtResource("1_q2buh")
+metallic = 1.0
+metallic_texture = ExtResource("3_odi6o")
+roughness_texture = ExtResource("5_g7f2m")
+normal_enabled = true
+normal_texture = ExtResource("4_p6vs0")
+heightmap_enabled = true
+heightmap_scale = 0.0
+heightmap_texture = ExtResource("2_1o8jc")
