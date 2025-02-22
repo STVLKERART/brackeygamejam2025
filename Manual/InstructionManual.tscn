@@ -33,3 +33,9 @@ collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("SphereShape3D_fkmdf")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.282881, 0.30048, 1.68514)
+layers = 2
+light_color = Color(0.98833, 0.809558, 0.71274, 1)
+light_energy = 0.5
