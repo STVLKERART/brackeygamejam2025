@@ -6,21 +6,16 @@
 [node name="Pointer" instance=ExtResource("1_jygeb")]
 
 [node name="pCylinder12" parent="." index="0"]
-layers = 2
 material_override = ExtResource("2_qvuve")
 
 [node name="pCylinder13" parent="pCylinder12" index="0"]
-layers = 2
 material_override = ExtResource("2_qvuve")
 
 [node name="pCylinder14" parent="pCylinder12/pCylinder13" index="0"]
-layers = 2
 material_override = ExtResource("2_qvuve")
 
 [node name="pCylinder15" parent="pCylinder12/pCylinder13/pCylinder14" index="0"]
-layers = 2
 material_override = ExtResource("2_qvuve")
 
 [node name="pCylinder17" parent="pCylinder12/pCylinder13/pCylinder14/pCylinder15" index="0"]
-layers = 2
 material_override = ExtResource("2_qvuve")
