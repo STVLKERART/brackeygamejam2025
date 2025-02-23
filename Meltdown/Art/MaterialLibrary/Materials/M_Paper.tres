@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cwsnhapo1dsth"]
+
+[ext_resource type="Shader" uid="uid://c1bu2i7wnftpy" path="res://Meltdown/Art/MaterialLibrary/MaterialShaders/MS_Paper.tres" id="1_m72ky"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_m72ky")

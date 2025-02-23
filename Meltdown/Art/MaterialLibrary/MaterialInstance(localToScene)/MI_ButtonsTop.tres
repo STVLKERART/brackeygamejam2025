@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://dsxxj5p4j5l5u"]
+
+[ext_resource type="Texture2D" uid="uid://bl2wmy206irnc" path="res://Meltdown/Art/Textures/Buttons/Buttons_BaseColor.png" id="1_1ll13"]
+[ext_resource type="Texture2D" uid="uid://d1ahgpbf3jkhp" path="res://Meltdown/Art/Textures/Buttons/Buttons_Height.png" id="2_alf2q"]
+[ext_resource type="Texture2D" uid="uid://cgdx3b40ktl1q" path="res://Meltdown/Art/Textures/Buttons/Buttons_Metallic.png" id="3_oljsm"]
+[ext_resource type="Texture2D" uid="uid://2bfninrhji0n" path="res://Meltdown/Art/Textures/Buttons/Buttons_Normal.png" id="4_8emfw"]
+[ext_resource type="Texture2D" uid="uid://dpab6weqtchi0" path="res://Meltdown/Art/Textures/Buttons/Buttons_Roughness.png" id="5_capnw"]
+
+[resource]
+resource_local_to_scene = true
+albedo_color = Color(0.931066, 0.47081, 0.343146, 1)
+albedo_texture = ExtResource("1_1ll13")
+metallic_texture = ExtResource("3_oljsm")
+roughness = 0.0
+roughness_texture = ExtResource("5_capnw")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = ExtResource("4_8emfw")
+heightmap_enabled = true
+heightmap_scale = 0.0
+heightmap_texture = ExtResource("2_alf2q")

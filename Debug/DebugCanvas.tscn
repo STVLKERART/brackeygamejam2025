@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" path="res://Debug/DebugDisplay.cs" id="2_wu7uk"]
 [ext_resource type="Script" path="res://Debug/DebugDefaults.cs" id="3_myhrt"]
-[ext_resource type="Texture2D" uid="uid://dfo1o0b0st8v8" path="res://Assets/Textures/crosshair_01.png" id="3_ol7fl"]
+[ext_resource type="Texture2D" uid="uid://dfo1o0b0st8v8" path="res://Meltdown/Art/Textures/UI/crosshair_01.png" id="3_ol7fl"]
+
 
 [sub_resource type="GDScript" id="GDScript_k41p6"]
 script/source = "extends CanvasLayer

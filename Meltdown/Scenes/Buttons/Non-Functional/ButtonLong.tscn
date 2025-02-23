@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgmel8f8pmaid"]
+
+[ext_resource type="PackedScene" uid="uid://bxvlabbgr61tr" path="res://Meltdown/Art/Objects-Meshes/Buttons/Button_Long_Bottom.fbx" id="1_gith7"]
+[ext_resource type="Material" uid="uid://cl0m33fyosvdw" path="res://Meltdown/Art/MaterialLibrary/MaterialInstance(localToScene)/MI_ButtonsBase.tres" id="2_ufkpf"]
+[ext_resource type="Material" uid="uid://dsxxj5p4j5l5u" path="res://Meltdown/Art/MaterialLibrary/MaterialInstance(localToScene)/MI_ButtonsTop.tres" id="3_mrq4e"]
+
+[node name="Button_Long_Bottom" instance=ExtResource("1_gith7")]
+
+[node name="Button_Long_Bottom" parent="Test_Buttons_3" index="0"]
+material_override = ExtResource("2_ufkpf")
+
+[node name="Button_Long_Top" parent="Test_Buttons_3/Button_Long_Bottom" index="0"]
+material_override = ExtResource("3_mrq4e")

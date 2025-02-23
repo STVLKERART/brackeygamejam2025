@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://d2hc64dsr8tyw"]
+
+[ext_resource type="Texture2D" uid="uid://b733l3y8bhlig" path="res://Meltdown/Art/Textures/ControlPanel/Control_Panel_Bottom_BaseColor.png" id="1_upynt"]
+[ext_resource type="Texture2D" uid="uid://bqixaunv6d360" path="res://Meltdown/Art/Textures/ControlPanel/Control_Panel_Bottom_Height.png" id="2_y8yme"]
+[ext_resource type="Texture2D" uid="uid://cc0oktvok0rus" path="res://Meltdown/Art/Textures/ControlPanel/Control_Panel_Bottom_Metallic.png" id="3_0c2wj"]
+[ext_resource type="Texture2D" uid="uid://dcxkiot7drl2b" path="res://Meltdown/Art/Textures/ControlPanel/Control_Panel_Bottom_Normal.png" id="4_rlgi5"]
+[ext_resource type="Texture2D" uid="uid://d0iiv173esr5k" path="res://Meltdown/Art/Textures/ControlPanel/Control_Panel_Bottom_Roughness.png" id="5_mfaqq"]
+
+[resource]
+albedo_texture = ExtResource("1_upynt")
+metallic = 1.0
+metallic_texture = ExtResource("3_0c2wj")
+roughness_texture = ExtResource("5_mfaqq")
+normal_enabled = true
+normal_texture = ExtResource("4_rlgi5")
+heightmap_enabled = true
+heightmap_scale = 0.0
+heightmap_texture = ExtResource("2_y8yme")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dos4na3ti18di"]
+
+[ext_resource type="PackedScene" uid="uid://bqeedh0o6w555" path="res://Meltdown/Art/Objects-Meshes/ControlPanel/Left_Screen.fbx" id="1_ebern"]
+[ext_resource type="Material" uid="uid://d2hc64dsr8tyw" path="res://Meltdown/Art/MaterialLibrary/Materials/M_ControlPanelBottom.tres" id="2_qsyce"]
+
+[node name="Left_Screen" instance=ExtResource("1_ebern")]
+
+[node name="Left_Screen" parent="." index="0"]
+material_override = ExtResource("2_qsyce")
