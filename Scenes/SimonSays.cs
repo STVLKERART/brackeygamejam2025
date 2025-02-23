@@ -112,7 +112,7 @@ public partial class SimonSays : Node3D
         screen.FlashBox(-1, FlashColour, 0.2f);
         if (playbackStep <= sequence.Count - 1)
         {
-            screen.FlashBox(sequence[playbackStep], FlashColour, 1f);
+            screen.FlashBox(sequence[playbackStep], FlashColour, .5f);
             playbackStep++;
         }
         else

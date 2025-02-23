@@ -39,11 +39,10 @@ heightmap_enabled = true
 heightmap_scale = 0.0
 heightmap_texture = ExtResource("5_dvtrm")
 
-[node name="DialButton" type="Node3D" node_paths=PackedStringArray("_dialTop", "ButtonTop")]
+[node name="DialButton" type="Node3D" node_paths=PackedStringArray("_dialTop")]
 script = ExtResource("1_mn5ve")
 DialTurnedSound = ExtResource("3_icfan")
 _dialTop = NodePath("Dial_1_Bottom/Test_Buttons_3/Dial_1_Bottom/Dial_1_Top")
-ButtonTop = NodePath("Dial_1_Bottom/Test_Buttons_3/Dial_1_Bottom/Dial_1_Top")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 collision_layer = 2

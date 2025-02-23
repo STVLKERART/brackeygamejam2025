@@ -6,8 +6,12 @@ public partial class GameRoot : Node
 {
     [Export] MeltdownProgress _meltdownProgress;
     static MeltdownProgress _staticMeltdownProgress = new MeltdownProgress();
+    public static GameRoot Instance;
+    public bool _ManualVisible = false;
+
     public override void _EnterTree()
     {
+        Instance = this;
         initialise();
     }
     public override void _Input(InputEvent @event)

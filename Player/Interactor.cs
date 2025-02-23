@@ -24,31 +24,31 @@ public partial class Interactor : Node3D
         _ray.GlobalPosition = _camera.GlobalPosition;
         _ray.GlobalRotation = _camera.GlobalRotation;
 
-        if (Input.IsActionJustReleased("interact"))
-        {
-            if (_ray.IsColliding())
-            {
-                Node parent = (_ray.GetCollider() as Node3D)?.GetParent();
-                if (parent is FacilityButton fb)
-                {
-                    _currentButton = null;
-                    fb.InteractRelease();
-                }
-            }
-        }
-        if (Input.IsActionJustPressed("interact"))
-        {
-            if (_ray.IsColliding())
-            {
-                Node parent = (_ray.GetCollider() as Node3D)?.GetParent();
-
-                if (parent.GetScript().As<Script>() == manualClass)
-                {
-                    parent.QueueFree();
-                    PickedUpManual?.Invoke();
-                }
-            }
-        }
+        //if (Input.IsActionJustReleased("interact"))
+        //{
+        //    if (_ray.IsColliding())
+        //    {
+        //        Node parent = (_ray.GetCollider() as Node3D)?.GetParent();
+        //        if (parent is FacilityButton fb)
+        //        {
+        //            _currentButton = null;
+        //            fb.InteractRelease();
+        //        }
+        //    }
+        //}
+        //if (Input.IsActionJustPressed("interact"))
+        //{
+        //    if (_ray.IsColliding())
+        //    {
+        //        Node parent = (_ray.GetCollider() as Node3D)?.GetParent();
+        //
+        //        if (parent.GetScript().As<Script>() == manualClass)
+        //        {
+        //            parent.QueueFree();
+        //            PickedUpManual?.Invoke();
+        //        }
+        //    }
+        //}
 
     }
 
@@ -68,7 +68,7 @@ public partial class Interactor : Node3D
                 if (_ray.IsColliding())
                 {
                     Node parent = ((Node)_ray.GetCollider()).GetParent();
-                    if (parent is FacilityButton fb)
+                    if (parent is FacilityButton fb && !GameRoot.Instance._ManualVisible)
                     {
                         if (_currentButton != fb && _currentButton != null)
                         {

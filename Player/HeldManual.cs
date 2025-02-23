@@ -16,8 +16,9 @@ public partial class HeldManual : Node3D
         {
             ManualNode.Visible = !ManualNode.Visible;
             ManualNode.SetProcessUnhandledInput(ManualNode.Visible);
-            Character.DisableMovement(ManualNode.Visible);
+            //Character.DisableMovement(ManualNode.Visible);
             PointerMesh.Visible = !ManualNode.Visible;
+            GameRoot.Instance._ManualVisible = ManualNode.Visible;
         }
 
         if (@event is InputEventMouseMotion motion)

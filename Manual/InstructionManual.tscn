@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cyks2bybopkvi" path="res://Manual/mesh_page.tscn" id="4_d8ypx"]
 [ext_resource type="PackedScene" uid="uid://dy4g6b5mketrm" path="res://Manual/pivot.tscn" id="5_14oid"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_fkmdf"]
-radius = 0.785
+[sub_resource type="BoxShape3D" id="BoxShape3D_u82rd"]
+size = Vector3(1.11273, 1, 0.250824)
 
 [node name="InstructionManual" type="Node3D"]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -0.0137075, 0.00466847, 0.0319883)
@@ -32,7 +32,8 @@ transform = Transform3D(0.722238, -0.643028, 4.01393e-08, -7.62604e-11, -4.37113
 collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("SphereShape3D_fkmdf")
+transform = Transform3D(0.94194, 0, -0.33578, 0, 1, 0, 0.33578, 0, 0.94194, -0.0461797, 0, 0.102293)
+shape = SubResource("BoxShape3D_u82rd")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.282881, 0.30048, 1.68514)

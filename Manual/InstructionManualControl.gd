@@ -16,7 +16,7 @@ var T_pages: Array[CompressedTexture2D] = [
 	preload("res://Assets/Textures/Pages/Page_04.png")
 	]
 
-@export var rotation_time: float = .4
+@export var rotation_time: float = .22
 var current_page: int = 0
 var rotating: bool = false
 
@@ -37,10 +37,10 @@ func _process(_delta: float) -> void:
 
 
 func _unhandled_input(_event):
-	if Input.is_action_just_pressed("left"):
+	if Input.is_action_just_pressed("tpF"):
 		if not rotating and current_page + 1 < T_pages.size():
 			start_fwd_rotation(rotation_time)
-	elif Input.is_action_just_pressed("right"):
+	elif Input.is_action_just_pressed("tpB"):
 		if not rotating and current_page > 0:
 			start_bkwd_rotation(rotation_time)
 
