@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://beepgbryoiiic"]
+[gd_scene load_steps=29 format=4 uid="uid://beepgbryoiiic"]
 
 [ext_resource type="Script" path="res://Buttons/Scripts/FacilityButton.cs" id="1_d3his"]
 [ext_resource type="PackedScene" uid="uid://bne16lmf4x5tr" path="res://Buttons/BigPressButton.tscn" id="2_o2fcm"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c50jqw00qql1i" path="res://Assets/Objects-Meshes/ControlPanel/ControlPanelBottom/ControlPanelBottom.tscn" id="8_ytmdf"]
 [ext_resource type="PackedScene" uid="uid://dos4na3ti18di" path="res://Assets/Objects-Meshes/ControlPanel/leftScreen/LeftScreen.tscn" id="9_upp7m"]
 [ext_resource type="PackedScene" uid="uid://bachto023bvt8" path="res://Assets/Objects-Meshes/Fan/FanFull.tscn" id="10_np7mm"]
+[ext_resource type="PackedScene" uid="uid://dy6tlxm6j6t7b" path="res://Scenes/WarningLight.tscn" id="11_qdttl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s3qdt"]
 resource_name = "standardSurface1"
@@ -353,3 +354,6 @@ light_energy = 1.4
 shadow_enabled = true
 shadow_opacity = 0.89
 shadow_blur = 10.0
+
+[node name="Warning_Light" parent="." instance=ExtResource("11_qdttl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.78186, 3.54662, -2.95044)
