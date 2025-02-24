@@ -400,11 +400,9 @@ transform = Transform3D(-4.77405e-08, 2.6791e-08, -1.38223, 0.847179, 0.790155, 
 
 [node name="BigPressButton_null" parent="ControlRoom/NoahsTestButtons" instance=ExtResource("2_elat7")]
 transform = Transform3D(0.723468, 0, 3.55271e-15, -8.9407e-08, 1, 3.55271e-15, -5.32907e-15, 3.55271e-15, 0.723468, -0.203574, -3.57628e-07, 0.0746869)
-ButtonTag = "asd"
 
 [node name="BigPressButton_confetti" parent="ControlRoom/NoahsTestButtons" instance=ExtResource("2_elat7")]
 transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 3.55271e-15, 0, 1.77636e-15, 1, 0.127447, -7.45058e-09, 8.88178e-16)
-ButtonTag = "confetti"
 
 [node name="DialButton_BigThree_2" parent="ControlRoom/NoahsTestButtons" instance=ExtResource("3_tfsiq")]
 transform = Transform3D(0.723468, 0, 1.77636e-15, -5.96046e-08, 1, 1.77636e-15, -3.55271e-15, 1.77636e-15, 0.723468, -0.199981, 0.00281858, 0.235925)
@@ -412,7 +410,6 @@ DialTurns = 2
 _targetDialIndex = 0
 DialStartingAngle = -70
 DialFinalAngle = 140
-ButtonTag = "twoOfThree"
 
 [node name="DialButton_BigThree_1" parent="ControlRoom/NoahsTestButtons" instance=ExtResource("3_tfsiq")]
 transform = Transform3D(0.723468, 0, 1.77636e-15, -5.96046e-08, 1, 1.77636e-15, -3.55271e-15, 1.77636e-15, 0.723468, -0.199981, 0.00281858, 0.394431)
@@ -420,14 +417,12 @@ DialTurns = 4
 _targetDialIndex = 4
 DialStartingAngle = 70
 DialFinalAngle = -140
-ButtonTag = "oneOfThree"
 
 [node name="DialButton_BigThree_3" parent="ControlRoom/NoahsTestButtons" instance=ExtResource("3_tfsiq")]
 transform = Transform3D(0.723468, 0, 1.77636e-15, -5.96046e-08, 1, 1.77636e-15, -3.55271e-15, 1.77636e-15, 0.723468, -0.199981, 0.00281858, 0.553662)
 DialTurns = 1
 _targetDialIndex = 1
 DialFinalAngle = -70
-ButtonTag = "threeOfThree"
 
 [node name="SimonSaysButtons" parent="ControlRoom" instance=ExtResource("4_j6k5y")]
 transform = Transform3D(-4.37114e-08, 0, -1, -0.626359, 0.779535, 2.7379e-08, 0.779535, 0.626359, -3.40745e-08, -1.21862, 0.861108, -3.08758)
